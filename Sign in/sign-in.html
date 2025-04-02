@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign in</title>
+        <link
+            rel="icon"
+            href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjoGlSmZBa2rgnhOsr-Uulcoo3Phe3VlUwOA&s"
+        />
+        <link rel="stylesheet" href="./sign-in.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/e724c329aa.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <section id="container-all">
+            <div id="notifications"></div>
+            <section id="container">
+                <div>
+                    <img src="../my-photos/brand.png" alt="" id="brand" />
+                </div>
+                <div>Please sign in</div>
+                <div>
+                    <input
+                        type="text"
+                        placeholder="Email address"
+                        id="email"
+                        autocomplete="email"
+                    />
+
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        id="password"
+                        autocomplete="current-password"
+                    />
+                </div>
+                <div>
+                    <input type="checkbox" id="remember"/>&nbsp;
+                    Remember me
+                </div>
+                <div>
+                    Don't have an account,
+                    <a href="/Sign up/sign-up.html">click here !</a>
+                </div>
+                <button id="sign-in">Sign in</button>
+                <footer>&copy; 2025 - Rikkei Education</footer>
+            </section>
+        </section>
+        <script src="./sign-in.js"></script>
+    </body>
+</html>

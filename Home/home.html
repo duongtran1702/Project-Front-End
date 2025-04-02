@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home</title>
+        <link rel="icon" href="/my-photos/home-icon.png" />
+        <link rel="stylesheet" href="./home.css" />
+        <script
+            src="https://kit.fontawesome.com/e724c329aa.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div id="container-all">
+            <section id="side-bar" class="expand">
+                <header id="header-sidebar">
+                    <div id="container-brand">
+                        <img src="/my-photos/brand.png" alt="" id="brand" />
+                    </div>
+                    <div class="sidebar-item" id="homepage">
+                        <div><img src="/my-photos/home.png" alt="" /></div>
+                        <div>Homepage</div>
+                    </div>
+                    <div class="sidebar-item" id="foods">
+                        <div><img src="/my-photos/foods.png" alt="" /></div>
+                        <div>Foods</div>
+                    </div>
+                    <div class="sidebar-item" id="recipes">
+                        <div><img src="/my-photos/recipes.png" alt="" /></div>
+                        <div>Recipes</div>
+                    </div>
+                </header>
+                <footer id="sign-out">
+                    <div><img src="/my-photos/user.png" alt="" /></div>
+                    <div>Sign out</div>
+                </footer>
+            </section>
+            <section id="container-main" class="shrink">
+                <div id="topbar">
+                    <nav>
+                        <div>
+                            <img src="/my-photos/menu.png" alt="" id="menu" />
+                        </div>
+                        <div id="box-user">
+                            <div id="icon">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div id="user">admin</div>
+                        </div>
+                    </nav>
+                    <header>
+                        <div>Recipes</div>
+                        <div>Creat,check,and update recipes</div>
+                    </header>
+                </div>
+                <main>
+                    <div id="intro">
+                        <div>Recipes</div>
+                        <div>Search, check and create new recipes</div>
+                    </div>
+                    <div id="control-panel">
+                        <input
+                            type="text"
+                            id="search"
+                            placeholder="Search food"
+                        />
+                        <div id="sort">
+                            <div id="icon-sort">
+                                <i class="fa-solid fa-arrow-up-wide-short"></i>
+                            </div>
+                            <select id="select-sort">
+                                <option value="overall" selected>
+                                    Sort by overall
+                                </option>
+                                <option value="energy">Sort by energy</option>
+                                <option value="fat">Sort by fat</option>
+                                <option value="carbohydrate">
+                                    Sort by carbohydrate
+                                </option>
+                                <option value="protein">Sort by protein</option>
+                            </select>
+                        </div>
+                        <select name="" id="filter-category"></select>
+                    </div>
+                    <div id="collection"></div>
+                    <div id="pagination"></div>
+                </main>
+            </section>
+        </div>
+        <script src="./home.js"></script>
+        <script src="./home_2.js"></script>
+    </body>
+</html>

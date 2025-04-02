@@ -1,0 +1,160 @@
+#container-all {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+* {
+    font-family: 'Roboto', sans-serif;
+}
+#container {
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#brand {
+    width: 180px;
+    height: 45px;
+}
+/* brand */
+#container div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+}
+#container div:nth-child(2) {
+    font-size: 27px;
+    color: rgba(33, 37, 41, 1);
+}
+#container div:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#container div{
+    display: flex;
+    font-size: 16px;
+}
+#container div:nth-child(5) {
+    font-size: 16px;
+}
+input {
+    padding: 10px;
+    border: 2px solid rgb(189, 185, 185);
+    outline: none;
+}
+input:nth-child(1) {
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+input:nth-child(2) {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+input:focus {
+    border: 2px solid blue;
+    border-radius: 3px;
+}
+a {
+    color: rgb(31, 31, 248);
+}
+#sign-in {
+    background-color: rgba(13, 110, 253, 1);
+    border: none;
+    padding: 8px;
+    color: white;
+    border-radius: 3px;
+}
+footer {
+    margin-top: 30px;
+    color: rgba(33, 37, 41, 0.75);
+}
+button:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+#notifications {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+}
+.noti-false nav {
+    display: flex;
+    justify-content: space-between;
+}
+aside {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.remove-circle {
+    background-color: red;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.remove-circle div {
+    width: 6px;
+    height: 2px;
+    background-color: white;
+}
+.noti-content {
+    padding: 8px 40px 10px 20px;
+    font-size: 12px;
+}
+.noti-content div {
+    padding: 2px 0px;
+}
+.noti-false {
+    background-color: rgb(251, 218, 222);
+    padding: 15px;
+    padding-bottom: 0px;
+    border-radius: 5px;
+}
+.close {
+    background-color: rgba(193, 182, 182, 0.35);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+.noti-false nav {
+    display: flex;
+    align-items: center;
+}
+.noti-true {
+    background-color: rgb(205, 253, 225);
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    display: flex;
+}
+.checked {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    background-color: rgb(51, 245, 180);
+    margin-right: 5px;
+}
