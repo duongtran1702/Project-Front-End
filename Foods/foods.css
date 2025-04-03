@@ -1,0 +1,44 @@
+.card-food2-right{
+    display: flex;
+   gap: 15px;
+}
+.title-food2{
+    color: rgb(105, 104, 104);
+    font-weight: 600;
+    font-size: 16px;
+}
+.name-food2{
+    color: rgba(103, 106, 108, 1);
+    font-size: 14px;
+}
+.card-food2{
+    display: flex;
+    width:100%;
+    justify-content: space-between;
+    padding:8px 12px;
+    border: 1.5px solid rgb(180, 179, 179);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+#collection-2{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px,1100px));
+    gap: 10px;
+}
+#add-food{
+    display: flex;
+    width:100%;
+    /* max-width: 1000px; */
+    align-items: center;
+    gap: 10px;
+    padding:8px 12px;
+    border: 1.5px solid rgb(180, 179, 179);
+    border-radius: 5px;
+    height: 53px;
+    box-sizing: border-box;
+}
+#icon-add{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}

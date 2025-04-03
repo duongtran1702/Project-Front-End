@@ -4,6 +4,16 @@ document.querySelectorAll('.sidebar-item').forEach((item) => {
             .querySelectorAll('.sidebar-item')
             .forEach((i) => i.classList.remove('selected'));
         this.classList.add('selected');
+        if(this.closest('#homepage')){
+            window.location.href="/Home/home.html"
+        }
+        else if(this.closest('#foods')){
+            window.location.href="/Foods/foods.html"
+        }
+        else if(this.closest('#recipes')){
+            window.location.href="/Recipes/recipes.html"
+        }
+       
     });
 });
 

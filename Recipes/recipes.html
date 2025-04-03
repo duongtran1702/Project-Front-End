@@ -3,14 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home</title>
-        <link rel="icon" href="/my-photos/home-icon.png" />
-        <link rel="stylesheet" href="./home.css" />
+        <title>Recipe</title>
+        <link rel="icon" href="/my-photos/recipes-icon.png" />
+        <link rel="stylesheet" href="./recipes.css" />
         <script
             src="https://kit.fontawesome.com/e724c329aa.js"
             crossorigin="anonymous"
         ></script>
-        
     </head>
     <body>
         <div id="container-all">
@@ -56,9 +55,14 @@
                     </header>
                 </div>
                 <main>
-                    <div id="intro">
-                        <div>Recipes</div>
-                        <div>Search, check and create new recipes</div>
+                    <div id="box-intro">
+                        <div id="intro">
+                            <div>Recipes</div>
+                            <div>Search, check and create new recipes</div>
+                        </div>
+                        <button id="add-recipe">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
                     </div>
                     <div id="control-panel">
                         <input
@@ -84,12 +88,27 @@
                         </div>
                         <select name="" id="filter-category"></select>
                     </div>
+                    <div id="box-special">
+                        <div>
+                            <i
+                                class="fa-solid fa-heart heart"
+                                style="color: rgb(241, 23, 23)"
+                            ></i
+                            >&nbsp;Favorite&nbsp;0
+                        </div>
+                        <div id="box-special-1">
+                            <button id="check"><i class="fa-solid fa-check"></i></button>
+                            <div id="write"><i class="fa-solid fa-pencil"></i></div>
+                            My recipes
+                        </div>
+                    </div>
                     <div id="collection"></div>
                     <div id="pagination"></div>
                 </main>
             </section>
         </div>
-        <script src="./home.js"></script>
-        <script src="./home_2.js"></script>
+        <script src="/Home/home.js"></script>
+        <script src="./recipes2.js"></script>
+        
     </body>
 </html>

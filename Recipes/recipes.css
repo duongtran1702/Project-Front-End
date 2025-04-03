@@ -337,9 +337,59 @@ li {
     color: #737272;
     padding-bottom: 15px;
 }
-#intro div:nth-child(1){
+#intro div:nth-child(1) {
     font-size: 22px;
 }
+#add-recipe {
+    display: block;
+    border: none;
+    background-color: transparent;
+    font-size: 25px;
+    cursor: pointer;
+    color: #747474;
+}
+
+#box-intro {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10%;
+}
+#box-special div:nth-child(1) {
+    border: 1.5px solid rgb(213, 213, 213);
+    width: fit-content;
+    padding: 3px 4px;
+    border-radius: 3px;
+}
+#box-special div:nth-child(2) {
+    display: flex;
+    gap: 5px;
+    color: rgb(15, 99, 216);
+}
+#check {
+    border: 2px solid rgb(0, 104, 249);
+    color: rgb(0, 104, 249);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+#box-special {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 8%;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+#write {
+    border-bottom: 2px solid rgb(0, 104, 249);
+    padding: 1px;
+    height: fit-content;
+}
+#box-special-1 {
+    display: flex;
+    align-items: center;
+}
+
 main {
     min-width: 585px;
     box-sizing: border-box;
