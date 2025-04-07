@@ -1,20 +1,38 @@
+
 document.querySelectorAll('.sidebar-item').forEach((item) => {
     item.addEventListener('click', function () {
+        // Xóa lớp selected cho tất cả các item
         document
             .querySelectorAll('.sidebar-item')
             .forEach((i) => i.classList.remove('selected'));
+
+        // Thêm lớp selected cho item được chọn
         this.classList.add('selected');
-        if(this.closest('#homepage')){
-            window.location.href="/Home/home.html"
+
+        // Lưu vị trí của item đã chọn vào localStorage
+        localStorage.setItem('selectedSidebarItem', this.id); // Giả sử bạn dùng id cho các item
+
+        // Chuyển hướng tùy theo item đã chọn
+        if (this.closest('#homepage')) {
+            window.location.href = '/Home/home.html';
+        } else if (this.closest('#foods')) {
+            window.location.href = '/Foods/foods.html';
+        } else if (this.closest('#recipes')) {
+            window.location.href = '/Recipes/recipes.html';
         }
-        else if(this.closest('#foods')){
-            window.location.href="/Foods/foods.html"
-        }
-        else if(this.closest('#recipes')){
-            window.location.href="/Recipes/recipes.html"
-        }
-       
     });
+});
+
+// Khi trang được tải lại, kiểm tra xem có item nào đã được chọn trước đó không
+window.addEventListener('DOMContentLoaded', () => {
+    const selectedItem = localStorage.getItem('selectedSidebarItem');
+    if (selectedItem) {
+        // Áp dụng lại lớp selected cho item đã được chọn
+        const itemToSelect = document.getElementById(selectedItem);
+        if (itemToSelect) {
+            itemToSelect.classList.add('selected');
+        }
+    }
 });
 
 let menu = document.getElementById('menu');
@@ -289,6 +307,228 @@ signOut.addEventListener('click', () => {
 //             8,
 //             30,
 //             15
+//         )
+//     );
+// }
+// if (this.ingredients.length === 0) {
+//     this.ingredients.push(
+//         new Ingredient(
+//             'Salmon',
+//             'Fish',
+//             'Protein',
+//             100,
+//             206,
+//             12,
+//             0,
+//             22,
+//             60,
+//             0,
+//             50,
+//             70,
+//             0,
+//             0,
+//             4,
+//             0,
+//             2,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             50,
+//             20,
+//             35,
+//             30,
+//             30,
+//             0,
+//             2,
+//             0,
+//             10,
+//             1,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0
+//         ),
+//         new Ingredient(
+//             'Chicken',
+//             'Poultry',
+//             'Protein',
+//             100,
+//             165,
+//             3.6,
+//             0,
+//             31,
+//             85,
+//             0,
+//             70,
+//             70,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             15,
+//             1,
+//             25,
+//             16,
+//             50,
+//             0,
+//             1,
+//             5,
+//             0,
+//             12,
+//             1,
+//             1,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0
+//         ),
+//         new Ingredient(
+//             'Broccoli',
+//             'Vegetable',
+//             'Vegetable',
+//             100,
+//             34,
+//             0.4,
+//             7,
+//             2.8,
+//             0,
+//             2.6,
+//             33,
+//             89.2,
+//             112,
+//             0,
+//             0,
+//             89.2,
+//             0,
+//             0.3,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             47,
+//             0.7,
+//             30,
+//             11,
+//             6,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0
+//         ),
+//         new Ingredient(
+//             'Apple',
+//             'Fruit',
+//             'Fruit',
+//             100,
+//             52,
+//             0.2,
+//             14,
+//             0.3,
+//             0,
+//             2.4,
+//             4,
+//             85.56,
+//             0,
+//             0,
+//             0,
+//             4.6,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             7,
+//             6,
+//             8,
+//             5,
+//             100,
+//             0,
+//             1,
+//             0,
+//             5,
+//             4,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0
+//         ),
+//         new Ingredient(
+//             'Carrot',
+//             'Vegetable',
+//             'Vegetable',
+//             100,
+//             41,
+//             0.2,
+//             10,
+//             0.9,
+//             0,
+//             2.8,
+//             69,
+//             88,
+//             0,
+//             0,
+//             0,
+//             7.5,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             12,
+//             0.6,
+//             34,
+//             5,
+//             9,
+//             0,
+//             0,
+//             0,
+//             6,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0,
+//             0
 //         )
 //     );
 // }

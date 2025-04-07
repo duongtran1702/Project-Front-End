@@ -337,7 +337,7 @@ li {
     color: #737272;
     padding-bottom: 15px;
 }
-#intro div:nth-child(1){
+#intro div:nth-child(1) {
     font-size: 22px;
 }
 main {

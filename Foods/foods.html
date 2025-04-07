@@ -6,7 +6,9 @@
         <title>Foods</title>
         <link rel="icon" href="/my-photos/icon-food.png" />
         <link rel="stylesheet" href="/Home/home.css" />
-        <link rel="stylesheet" href="foods.css">
+        <link rel="stylesheet" href="./modal-add.css" />
+        <link rel="stylesheet" href="./modal-detail.css" />
+        <link rel="stylesheet" href="foods.css" />
         <script
             src="https://kit.fontawesome.com/e724c329aa.js"
             crossorigin="anonymous"
@@ -52,13 +54,18 @@
                     </nav>
                     <header>
                         <div>Food databases</div>
-                        <div>Create, check and update foods that you can use on meal plans</div>
+                        <div>
+                            Create, check and update foods that you can use on
+                            meal plans
+                        </div>
                     </header>
                 </div>
                 <main>
                     <div id="intro">
                         <div>Foods</div>
-                        <div>Search, consult and add new foods to the system</div>
+                        <div>
+                            Search, consult and add new foods to the system
+                        </div>
                     </div>
                     <div id="control-panel">
                         <input
@@ -86,131 +93,834 @@
                             <option value="">Select Category</option>
                         </select>
                     </div>
-                    <div id="collection-2">
-                        <div class="card-food2">
-                            <div class="card-food2-left">
-                                <div class="title-food2">
-                                    Ackee, canned, drained
+                    <div id="container-food">
+                        <div id="overlay">
+                            <div id="modal">
+                                <button id="close">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                                <div id="title-modal">Add new Food</div>
+                                <div id="describle-modal">
+                                    Fill in the fields below with the food
+                                    information
                                 </div>
-                                <div class="name-food2">
-                                    McCance and Widdowson's
+                                <div id="box-input-1">
+                                    <div class="a-row">
+                                        <div class="input-1">
+                                            <div>Name</div>
+                                            <input
+                                                type="text"
+                                                id="input-name"
+                                            />
+                                        </div>
+                                        <div class="input-2">
+                                            <div>Source</div>
+                                            <input
+                                                type="text"
+                                                id="input-source"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="a-row">
+                                        <div class="input-1">
+                                            <div>Category</div>
+                                            <select name="" id="input-category">
+                                                <option value="" selected>
+                                                    Choose category of
+                                                    ingredient
+                                                </option>
+                                                <option value="Meat & Poultry">
+                                                    Meat & Poultry
+                                                </option>
+                                                <option value="Seafood">
+                                                    Seafood
+                                                </option>
+                                                <option value="Dairy & Eggs">
+                                                    Dairy & Eggs
+                                                </option>
+                                                <option value="Grains & Pasta">
+                                                    Grains & Pasta
+                                                </option>
+                                                <option value="Vegetables">
+                                                    Vegetables
+                                                </option>
+                                                <option value="Fruits">
+                                                    Fruits
+                                                </option>
+                                                <option value="Nuts & Seeds">
+                                                    Nuts & Seeds
+                                                </option>
+                                                <option value="Herb & Spices">
+                                                    Herb & Spices
+                                                </option>
+                                                <option value="Oils & Fats">
+                                                    Oils & Fats
+                                                </option>
+                                                <option
+                                                    value="Condiments & Sauces"
+                                                >
+                                                    Condiments & Sauces
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="input-3">
+                                            <div>Quantity</div>
+                                            <input
+                                                type="text"
+                                                id="input-quantity"
+                                            />
+                                            <div>grams</div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-food2-right">
-                                <ul>
-                                    <li>151 kcal</li>
-                                    <li>Energy</li>
-                                </ul>
-                                <ul>
-                                    <li>15 g</li>
-                                    <li>Fat</li>
-                                </ul>
-                                <ul>
-                                    <li>1 g</li>
-                                    <li>Carbohydrate</li>
-                                </ul>
-                                <ul>
-                                    <li>3 g</li>
-                                    <li>Protein</li>
-                                </ul>
+                                <div id="nutrition-infor">
+                                    Nutritional value per 100 g
+                                </div>
+                                <div id="box-input-2">
+                                    <div class="macro-infor">
+                                        Macronutrients
+                                    </div>
+                                    <div class="a-row">
+                                        <div class="input-4">
+                                            <div>Energy</div>
+                                            <input
+                                                type="text"
+                                                id="input-energy"
+                                            />
+                                            <div>kcal</div>
+                                        </div>
+                                        <div class="input-4">
+                                            <div>Fat</div>
+                                            <input type="text" id="input-fat" />
+                                            <div>g</div>
+                                        </div>
+                                    </div>
+                                    <div class="a-row">
+                                        <div class="input-4">
+                                            <div>Carbohydrate</div>
+                                            <input
+                                                type="text"
+                                                id="input-carbohydrate"
+                                            />
+                                            <div>g</div>
+                                        </div>
+                                        <div class="input-4">
+                                            <div>Protein</div>
+                                            <input
+                                                type="text"
+                                                id="input-protein"
+                                            />
+                                            <div>g</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="box-input-3">
+                                    <div class="macro-infor">
+                                        Macronutrients
+                                    </div>
+                                    <div class="a-row">
+                                        <div class="input-5">
+                                            <div>Cholesterol</div>
+                                            <input
+                                                type="text"
+                                                id="input-cholesterol"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Fiber</div>
+                                            <input
+                                                type="text"
+                                                id="input-fiber"
+                                            />
+                                            <div>g</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Sodium</div>
+                                            <input
+                                                type="text"
+                                                id="input-sodium"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input-5">
+                                            <div>Water</div>
+                                            <input
+                                                type="text"
+                                                id="input-water"
+                                            />
+                                            <div>g</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Vitamin A</div>
+                                            <input
+                                                type="text"
+                                                id="input-vitamin-A"
+                                            />
+                                            <div>ug</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Vitamin B-6</div>
+                                            <input
+                                                type="text"
+                                                id="input-vitamin-B-6"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input-5">
+                                            <div>Vitamin B-12</div>
+                                            <input
+                                                type="text"
+                                                id="input-vitamin-B-12"
+                                            />
+                                            <div>ug</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Vitamin C</div>
+                                            <input
+                                                type="text"
+                                                id="input-vitamin-C"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div style="font-size: 14px">
+                                                Vitamin D <br />(D2 + D3)
+                                            </div>
+                                            <input
+                                                type="text"
+                                                id="input-vitamin-D"
+                                            />
+                                            <div>ug</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input-5">
+                                            <div>Vitamin E</div>
+                                            <input
+                                                type="text"
+                                                id="input-vitamin-E"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Vitamin K</div>
+                                            <input
+                                                type="text"
+                                                id="input-vitamin-K"
+                                            />
+                                            <div>ug</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Starch</div>
+                                            <input
+                                                type="text"
+                                                id="input-starch"
+                                            />
+                                            <div>g</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input-5">
+                                            <div>Lactose</div>
+                                            <input
+                                                type="text"
+                                                id="input-lactose"
+                                            />
+                                            <div>g</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Alcohol</div>
+                                            <input
+                                                type="text"
+                                                id="input-alcohol"
+                                            />
+                                            <div>g</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Caffeine</div>
+                                            <input
+                                                type="text"
+                                                id="input-caffeine"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input-5">
+                                            <div>Sugars</div>
+                                            <input
+                                                type="text"
+                                                id="input-sugars"
+                                            />
+                                            <div>g</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Calcium</div>
+                                            <input
+                                                type="text"
+                                                id="input-calcium"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Iron</div>
+                                            <input
+                                                type="text"
+                                                id="input-iron"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input-5">
+                                            <div>Magnesium</div>
+                                            <input
+                                                type="text"
+                                                id="input-magnesium"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Phosphorus</div>
+                                            <input
+                                                type="text"
+                                                id="input-phosphorus"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Potassium</div>
+                                            <input
+                                                type="text"
+                                                id="input-potassium"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input-5">
+                                            <div>Zinc</div>
+                                            <input
+                                                type="text"
+                                                id="input-zinc"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Copper</div>
+                                            <input
+                                                type="text"
+                                                id="input-copper"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Fluoride</div>
+                                            <input
+                                                type="text"
+                                                id="input-fluoride"
+                                            />
+                                            <div>ug</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input-5">
+                                            <div>Manganese</div>
+                                            <input
+                                                type="text"
+                                                id="input-manganese"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Selenium</div>
+                                            <input
+                                                type="text"
+                                                id="input-selenium"
+                                            />
+                                            <div>ug</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Thiamin</div>
+                                            <input
+                                                type="text"
+                                                id="input-thiamin"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input-5">
+                                            <div>Riboflavin</div>
+                                            <input
+                                                type="text"
+                                                id="input-riboflavin"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Niacin</div>
+                                            <input
+                                                type="text"
+                                                id="input-niacin"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div style="font-size: 14px">
+                                                Pantothenic acid
+                                            </div>
+                                            <input
+                                                type="text"
+                                                id="input-pantothenic"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input-5">
+                                            <div>Folate, total</div>
+                                            <input
+                                                type="text"
+                                                id="input-folate"
+                                            />
+                                            <div>ug</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div>Folic acid</div>
+                                            <input
+                                                type="text"
+                                                id="input-folic"
+                                            />
+                                            <div>ug</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div style="font-size: 14px">
+                                                Fatty acids, total trans
+                                            </div>
+                                            <input
+                                                type="text"
+                                                id="input-fatty-trans"
+                                            />
+                                            <div>g</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input-5">
+                                            <div style="font-size: 14px">
+                                                Fatty acids, total saturated
+                                            </div>
+                                            <input
+                                                type="text"
+                                                id="input-fatty-saturated"
+                                            />
+                                            <div>g</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div
+                                                style="
+                                                    font-size: 14px;
+                                                    padding-left: 5px;
+                                                "
+                                            >
+                                                Fatty acids, total
+                                                monounsaturated
+                                            </div>
+                                            <input
+                                                type="text"
+                                                id="input-fatty-monounsaturated"
+                                            />
+                                            <div>g</div>
+                                        </div>
+                                        <div class="input-5">
+                                            <div
+                                                style="
+                                                    font-size: 13px;
+                                                    padding-left: 5px;
+                                                "
+                                            >
+                                                Fatty acids, total
+                                                polyunsaturated
+                                            </div>
+                                            <input
+                                                type="text"
+                                                id="input-fatty-polyunsaturated"
+                                            />
+                                            <div>g</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input-5">
+                                            <div>Chloride</div>
+                                            <input
+                                                type="text"
+                                                id="input-chloride"
+                                            />
+                                            <div>mg</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <footer>
+                                    <button id="cancel">Cancel</button>
+                                    <button id="save-and-close">
+                                        Save and close
+                                    </button>
+                                </footer>
                             </div>
                         </div>
-                        <div class="card-food2">
-                            <div class="card-food2-left">
-                                <div class="title-food2">
-                                    Ackee, canned, drained
+                        <div id="overlay-2">
+                            <div id="modal-detail">
+                                <button id="close-2">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                                <div id="title-modal">Food information</div>
+                                <div id="describle-modal">
+                                    Check and update the information about the
+                                    food
                                 </div>
-                                <div class="name-food2">
-                                    McCance and Widdowson's
+                                <div id="box2-input-1">
+                                    <div class="a-row">
+                                        <div class="input2-1">
+                                            <div>Name</div>
+                                            <div id="output-name"></div>
+                                        </div>
+                                        <div class="input2-2">
+                                            <div>Source</div>
+                                            <div id="output-source"></div>
+                                        </div>
+                                    </div>
+                                    <div class="a-row">
+                                        <div class="input2-1">
+                                            <div>Category</div>
+                                            <div id="output-category"></div>
+                                        </div>
+                                        <div class="input2-3">
+                                            <div>Quantity</div>
+                                            <div id="output-quantity"></div>
+                                            <div>grams</div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-food2-right">
-                                <ul>
-                                    <li>151 kcal</li>
-                                    <li>Energy</li>
-                                </ul>
-                                <ul>
-                                    <li>15 g</li>
-                                    <li>Fat</li>
-                                </ul>
-                                <ul>
-                                    <li>1 g</li>
-                                    <li>Carbohydrate</li>
-                                </ul>
-                                <ul>
-                                    <li>3 g</li>
-                                    <li>Protein</li>
-                                </ul>
+                                <div id="nutrition-infor">
+                                    Nutritional value per 100 g
+                                </div>
+                                <div id="box2-input-2">
+                                    <div class="macro-infor">
+                                        Macronutrients
+                                    </div>
+                                    <div class="a-row">
+                                        <div class="input2-4">
+                                            <div>Energy</div>
+                                            <div id="output-energy"></div>
+                                            <div>kcal</div>
+                                        </div>
+                                        <div class="input2-4">
+                                            <div>Fat</div>
+                                            <div id="output-fat"></div>
+                                            <div>g</div>
+                                        </div>
+                                    </div>
+                                    <div class="a-row">
+                                        <div class="input2-4">
+                                            <div>Cacbohydrate</div>
+                                            <div id="output-carbohydrate"></div>
+                                            <div>g</div>
+                                        </div>
+                                        <div class="input2-4">
+                                            <div>Protein</div>
+                                            <div id="output-protein"></div>
+                                            <div>g</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="box2-input-3">
+                                    <div class="macro-infor">
+                                        Macronutrients
+                                    </div>
+                                    <div class="a-row">
+                                        <div class="input2-5">
+                                            <div>Cholesterol</div>
+                                            <div id="output-cholesterol"></div>
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Fiber</div>
+                                            <div id="output-fiber"></div>
+                                            <div>g</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Sodium</div>
+                                            <div id="output-sodium"></div>
+                                            <div>mg</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input2-5">
+                                            <div>Water</div>
+                                            <div id="output-water"></div>
+                                            <div>g</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Vitamin A</div>
+                                            <div id="output-vitamin-A"></div>
+                                            <div>ug</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Vitamin B-6</div>
+                                            <div id="output-vitamin-B-6"></div>
+                                            <div>mg</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input2-5">
+                                            <div>Vitamin B-12</div>
+                                            <div id="output-vitamin-B-12"></div>
+                                            <div>ug</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Vitamin C</div>
+                                            <div id="output-vitamin-C"></div>
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div style="font-size: 14px">
+                                                Vitamin D <br />(D2 + D3)
+                                            </div>
+                                            <div id="output-vitamin-D"></div>
+                                            <div>ug</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input2-5">
+                                            <div>Vitamin E</div>
+                                            <div id="output-vitamin-E"></div>
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Vitamin K</div>
+                                            <div id="output-vitamin-K"></div>
+                                            <div>ug</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Starch</div>
+                                            <div id="output-starch"></div>
+                                            <div>g</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input2-5">
+                                            <div>Lactose</div>
+                                            <div id="output-lactose"></div>
+                                            <div>g</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Alcohol</div>
+                                            <div id="output-alcohol"></div>
+                                            <div>g</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Caffeine</div>
+                                            <div id="output-caffeine"></div>
+                                            <div>mg</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input2-5">
+                                            <div>Sugars</div>
+                                            <div id="output-sugars"></div>
+                                            <div>g</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Calcium</div>
+                                            <div id="output-calcium"></div>
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Iron</div>
+                                            <div id="output-iron"></div>
+                                            <div>mg</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input2-5">
+                                            <div>Magnesium</div>
+                                            <div id="output-magnesium"></div>
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Phosphorus</div>
+                                            <div id="output-phosphorus"></div>
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Potassium</div>
+                                            <div id="output-potassium"></div>
+                                            <div>mg</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input2-5">
+                                            <div>Zinc</div>
+                                            <div id="output-zinc"></div>
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Copper</div>
+                                            <div id="output-copper"></div>
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Fluoride</div>
+                                            <div id="output-Fluoride"></div>
+                                            <div>ug</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input2-5">
+                                            <div>Manganese</div>
+                                            <div id="output-manganese"></div>
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Selenium</div>
+                                            <div id="output-selenium"></div>
+                                            <div>ug</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Thiamin</div>
+                                            <div id="output-thiamin"></div>
+                                            <div>mg</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input2-5">
+                                            <div>Riboflavin</div>
+                                            <div id="output-riboflavin"></div>
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Niacin</div>
+                                            <div id="output-niacin"></div>
+                                            <div>mg</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div style="font-size: 14px">
+                                                Pantothenic acid
+                                            </div>
+                                            <div id="output-pantothenic"></div>
+                                            <div>mg</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input2-5">
+                                            <div>Folate, total</div>
+                                            <div id="output-folate"></div>
+                                            <div>ug</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div>Folic acid</div>
+                                            <div id="output-folic"></div>
+                                            <div>ug</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div style="font-size: 14px">
+                                                Fatty acids, total trans
+                                            </div>
+                                            <div id="output-fatty-trans"></div>
+                                            <div>g</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input2-5">
+                                            <div style="font-size: 14px">
+                                                Fatty acids, total saturated
+                                            </div>
+                                            <div
+                                                id="output-fatty-saturated"
+                                            ></div>
+                                            <div>g</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div style="font-size: 14px">
+                                                Fatty acids, total
+                                                monounsaturated
+                                            </div>
+                                            <div
+                                                id="output-fatty-monounsaturated"
+                                            ></div>
+                                            <div>g</div>
+                                        </div>
+                                        <div class="input2-5">
+                                            <div style="font-size: 14px">
+                                                Fatty acids, total
+                                                polyunsaturated
+                                            </div>
+                                            <div
+                                                id="output-fatty-polyunsaturated"
+                                            ></div>
+                                            <div>g</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="a-row">
+                                        <div class="input2-5">
+                                            <div>Chloride</div>
+                                            <div id="output-chloride"></div>
+                                            <div>mg</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <footer>
+                                    <button id="edit">Edit</button>
+                                    <button id="delete">delete</button>
+                                </footer>
                             </div>
                         </div>
-                        <div class="card-food2">
-                            <div class="card-food2-left">
-                                <div class="title-food2">
-                                    Ackee, canned, drained
-                                </div>
-                                <div class="name-food2">
-                                    McCance and Widdowson's
-                                </div>
-                            </div>
-                            <div class="card-food2-right">
-                                <ul>
-                                    <li>151 kcal</li>
-                                    <li>Energy</li>
-                                </ul>
-                                <ul>
-                                    <li>15 g</li>
-                                    <li>Fat</li>
-                                </ul>
-                                <ul>
-                                    <li>1 g</li>
-                                    <li>Carbohydrate</li>
-                                </ul>
-                                <ul>
-                                    <li>3 g</li>
-                                    <li>Protein</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="card-food2">
-                            <div class="card-food2-left">
-                                <div class="title-food2">
-                                    Ackee, canned, drained
-                                </div>
-                                <div class="name-food2">
-                                    McCance and Widdowson's
-                                </div>
-                            </div>
-                            <div class="card-food2-right">
-                                <ul>
-                                    <li>151 kcal</li>
-                                    <li>Energy</li>
-                                </ul>
-                                <ul>
-                                    <li>15 g</li>
-                                    <li>Fat</li>
-                                </ul>
-                                <ul>
-                                    <li>1 g</li>
-                                    <li>Carbohydrate</li>
-                                </ul>
-                                <ul>
-                                    <li>3 g</li>
-                                    <li>Protein</li>
-                                </ul>
-                            </div>
-                        </div>
+                        <div id="collection-2"></div>
+
                         <div id="add-food">
-                            <img src="/my-photos/add.png" alt="" id="icon-add">
+                            <img
+                                src="/my-photos/add.png"
+                                alt=""
+                                id="icon-add"
+                            />
                             <div>Creat Food</div>
                         </div>
-                    </div>
-                    <div id="pagination">
-                        
+
+                        <div id="pagination"></div>
                     </div>
                 </main>
             </section>
         </div>
         <script src="/Home/home.js"></script>
-        <script></script>
+        <script src="./foods.js"></script>
     </body>
 </html>

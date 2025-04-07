@@ -12,6 +12,7 @@
     font-size: 14px;
 }
 .card-food2{
+    cursor: pointer;
     display: flex;
     width:100%;
     justify-content: space-between;
@@ -20,15 +21,22 @@
     border-radius: 5px;
     box-sizing: border-box;
 }
+.card-food2:hover{
+    background-color: #e4e0e0;
+}
 #collection-2{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(600px,1100px));
     gap: 10px;
+    z-index: 70;
+    
 }
 #add-food{
+    margin-top: 10px;
     display: flex;
     width:100%;
-    /* max-width: 1000px; */
+    min-width: 600px;
+    max-width: 1100px;
     align-items: center;
     gap: 10px;
     padding:8px 12px;

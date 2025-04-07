@@ -183,7 +183,7 @@ class Gallery {
         this.sortByEachNutrient(filteredArray);
 
         // Bước 3: Phân trang
-        let totalPages = Math.ceil(filteredArray.length / this.itemsPerPage)+96;
+        let totalPages = Math.ceil(filteredArray.length / this.itemsPerPage);
         let start = this.itemsPerPage * (this.currentPage - 1);
         let end = this.itemsPerPage * this.currentPage;
         let paginatedArray = filteredArray.slice(start, end);

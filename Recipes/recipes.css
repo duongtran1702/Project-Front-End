@@ -344,14 +344,18 @@ li {
     display: block;
     border: none;
     background-color: transparent;
-    font-size: 25px;
+    font-size: 30px;
     cursor: pointer;
-    color: #747474;
+    color: #a7a7a7;
+}
+#add-recipe:hover {
+    color: #757474;
 }
 
 #box-intro {
     display: flex;
     justify-content: space-between;
+    max-width: 1200px;
     padding-right: 10%;
 }
 #box-special div:nth-child(1) {
@@ -376,7 +380,7 @@ li {
 #box-special {
     display: flex;
     justify-content: space-between;
-    padding-right: 8%;
+    max-width: 1230px;
     padding-bottom: 20px;
     cursor: pointer;
 }
