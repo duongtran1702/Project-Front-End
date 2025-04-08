@@ -483,19 +483,30 @@ class ManagerIngredient {
         });
 
         if (!isValid) {
-            alert('Vui lòng nhập đúng thông tin!');
+            Swal.fire({
+                icon: 'warning',
+                title: 'Input is empty or invalid input !',
+                text: 'Please try again !',
+            });
+            // alert('Vui lòng nhập đúng thông tin!');
             return;
         }
         if (this.editingIndex !== null) {
             document.getElementById('save-and-close').innerText = 'Update';
             this.ingredients[this.editingIndex] = new Ingredient(...values);
             this.editingIndex = null;
-            alert('Đã cập nhật nguyên liệu thành công!');
+            Swal.fire({
+                icon: 'success',
+                title: 'Cập nhật nguyên liệu thành công',
+            });
             document.getElementById('save-and-close').innerText =
                 'Save and Close';
         } else {
             this.ingredients.push(new Ingredient(...values));
-            alert('Đã thêm nguyên liệu thành công!');
+            Swal.fire({
+                icon: 'success',
+                title: 'Thêm nguyên liệu thành công',
+            });
         }
 
         overlay.style.display = 'none';
@@ -626,7 +637,7 @@ class ManagerIngredient {
         });
     }
     Detail(name) {
-        let index = this.ingredients.findIndex(item=>item.name===name);
+        let index = this.ingredients.findIndex((item) => item.name === name);
         let ingredient = this.ingredients[index];
         document.getElementById('output-name').innerText = ingredient.name;
         document.getElementById('output-source').innerText = ingredient.source;
@@ -730,4 +741,4 @@ class ManagerIngredient {
         });
     }
 }
- temp=new ManagerIngredient();
+temp = new ManagerIngredient();

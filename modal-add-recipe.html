@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="/modal-add-recipe.css" />
+        <script
+            src="https://kit.fontawesome.com/e724c329aa.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div id="container-top">
+            <div id="box-image">
+                <div id="box-image-top">
+                    <div>
+                        <img src="/my-photos/icon-write.png" alt="" /> My
+                        recipes
+                    </div>
+                    <div id="box-like">
+                        <i class="fa-solid fa-heart icon-like"></i>
+                        <div>0</div>
+                    </div>
+                </div>
+                <div id="container-image">
+                    <img
+                        src="https://i.pinimg.com/736x/9e/d3/39/9ed3392bf7e92bee57c97af361deeddf.jpg"
+                        alt=""
+                        id="image-recipe"
+                    />
+                    <button id="clear-image">X</button>
+                    <button id="add-image">Add image</button>
+                    <input
+                        type="text"
+                        id="input-link-image"
+                        placeholder="Enter link image"
+                    />
+                </div>
+                <div id="box-image-bot">
+                    <img src="/my-photos/add-category.png" alt="" />
+                    <span>New category</span>
+                    <ul id="box-category">
+                        <li class="category-option">Option 1</li>
+                        <li class="category-option">Option 2</li>
+                        <li class="category-option">Option 3</li>
+                        <li class="category-option">Option 4</li>
+                        <li class="category-option">Option 5</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="container-top-right">
+                <div id="box-publish">
+                    <div class="box-intro">
+                        <div class="box-intro-top">Publish recipe</div>
+                        <div class="box-intro-bot">
+                            Publish your recipe on your website or share it with
+                            the Nutrium community
+                        </div>
+                    </div>
+                    <button id="publish">Publish</button>
+                </div>
+                <div id="basic-infor">
+                    <div class="box-intro">
+                        <div class="box-intro-top">Basic information</div>
+                        <div class="box-intro-bot" style="margin-bottom: 20px">
+                            Check and edit recipe's basic information
+                        </div>
+                        <div class="form">
+                            <div>Name</div>
+                            <div class="editable-field">Recipe</div>
+                            <input
+                                type="text"
+                                class="editable-field-input"
+                                name="Name"
+                                autocomplete="additional-name"
+                            />
+                            <div class="icon-edit">
+                                <img src="/my-photos/edit.png" alt="" />
+                            </div>
+                        </div>
+
+                        <div class="form">
+                            <div>Description</div>
+                            <div class="editable-field">Recipe</div>
+                            <input
+                                type="text"
+                                class="editable-field-input"
+                                name="Description"
+                            />
+                            <div class="icon-edit">
+                                <img src="/my-photos/edit.png" alt="" />
+                            </div>
+                        </div>
+                        <div class="form">
+                            <div>Total time</div>
+                            <div class="editable-field"></div>
+                            <input
+                                type="text"
+                                class="editable-field-input"
+                                name="Total time"
+                            />
+                            <div class="icon-edit">
+                                <img src="/my-photos/edit.png" alt="" />
+                            </div>
+                        </div>
+                        <div class="form">
+                            <div>Preparation time</div>
+                            <div class="editable-field">Recipe</div>
+                            <input
+                                type="text"
+                                class="editable-field-input"
+                                name="Preparation time"
+                            />
+                            <div class="icon-edit">
+                                <img src="/my-photos/edit.png" alt="" />
+                            </div>
+                        </div>
+                        <div class="form">
+                            <div>Final weight</div>
+                            <div class="editable-field">Recipe</div>
+                            <input
+                                type="text"
+                                class="editable-field-input"
+                                name="Final weight"
+                            />
+                            <div class="icon-edit">
+                                <img src="/my-photos/edit.png" alt="" />
+                            </div>
+                        </div>
+                        <div class="form">
+                            <div>Portions</div>
+                            <div class="editable-field">Recipe</div>
+                            <input
+                                type="text"
+                                class="editable-field-input"
+                                name="Portions"
+                            />
+                            <div class="icon-edit">
+                                <img src="/my-photos/edit.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="containner-mid">
+            <div id="introduction">
+                <div>Creation</div>
+                <div>Create the recipe and choose the ingredients</div>
+            </div>
+            <div id="container-ingredients">
+                <div class="box-intro">
+                    <div class="box-intro-top">Ingredients</div>
+                    <div class="box-intro-bot">
+                        Search and add ingredients to the recipe
+                    </div>
+                </div>
+                <div id="list-ingredient">
+                    <div class="an-ingredient">
+                        <div class="an-ingredient-left">
+                            <div class="ingredient-content">
+                                1 serving of babyfood, water, bottled, GERBER,
+                                without added fluoride (113 g)
+                            </div>
+                            <div class="area-add-ingredient-equivalent">
+                                <div class="add-ingredient-equivalent">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                                <div class="ingredient-content-2">
+                                    Add new food equivalent
+                                </div>
+                            </div>
+                        </div>
+                        <div class="delete-ingredient">
+                            <i class="fa-solid fa-trash"></i>
+                        </div>
+                    </div>
+                    <div class="an-ingredient">
+                        <div class="an-ingredient-left">
+                            <div class="ingredient-content">
+                                1 serving of babyfood , tropical fruit medley
+                                (88 g)
+                            </div>
+                            <div class="area-add-ingredient-equivalent">
+                                <div class="add-ingredient-equivalent">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                                <div class="ingredient-content-2">
+                                    Add new food equivalent
+                                </div>
+                            </div>
+                        </div>
+                        <div class="delete-ingredient">
+                            <i class="fa-solid fa-trash"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="add-new-gredient">
+                    <div class="area-add-ingredient-equivalent">
+                        <div class="add-ingredient-equivalent">
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <div class="ingredient-content-2">
+                            Add new ingredient
+                        </div>
+                    </div>
+                    <div id="modal-add-ingredient">
+                        <div id="control-panel">
+                            <input
+                                type="text"
+                                id="search"
+                                placeholder="Search food"
+                            />
+                            <div id="sort">
+                                <div id="icon-sort">
+                                    <i class="fa-solid fa-arrow-up-wide-short"></i>
+                                </div>
+                                <select id="select-sort">
+                                    <option value="overall" selected>
+                                        Sort by overall
+                                    </option>
+                                    <option value="energy">Sort by energy</option>
+                                    <option value="fat">Sort by fat</option>
+                                    <option value="carbohydrate">
+                                        Sort by carbohydrate
+                                    </option>
+                                    <option value="protein">Sort by protein</option>
+                                </select>
+                            </div>
+                            <select name="" id="filter-category">
+                                <option value="all" selected>All categories</option>
+                                <option value="category-1">Category 1</option>
+                                <option value="category-2">Category 2</option>
+                                <option value="category-3">Category 3</option>
+                                <option value="category-4">Category 4</option>
+                            </select>
+                        </div>
+                        <div class="box-ingredient">
+                            <div class="box-1">Nutritional Information</div>
+                            <div class="box-2">Energy</div>
+                            <div class="box-2">Fat</div>
+                            <div class="box-2">Carbohydrate</div>
+                            <div class="box-2">Protein</div>
+                            <div class="box-empty"></div>
+                        </div>
+                        <div class="box-1a">
+                            <div class="line-1">Keto 90 Second Bread</div>
+                            <div class="line-2">Community Recipes</div>
+                            <div class="line-3">
+                                <input type="text" value="1" class="line-3a" />
+                                <div class="line-3b">portion (87 grams)</div>
+                                <div class="line-3c">87g</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./modal-add-recipe.js"></script>
+    </body>
+</html>
