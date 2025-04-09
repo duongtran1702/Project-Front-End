@@ -64,48 +64,29 @@ iconLike.addEventListener('click', () => {
     boxLike.querySelector('div').textContent = like;
 });
 
-let basicInformation = {}; // Đối tượng để lưu thông tin
 
-// Lặp qua tất cả các form
-document.querySelectorAll('.form').forEach((form) => {
-    const label = form.querySelector('div:first-child'); // Lấy label (div đầu tiên)
-    const valueDiv = form.querySelector('.editable-field'); // Lấy div chứa giá trị hiện tại
-    const input = form.querySelector('.editable-field-input'); // Lấy input ẩn
-    const editIcon = form.querySelector('.icon-edit img'); // Lấy icon chỉnh sửa
 
-    // Khi nhấn vào icon sửa
-    editIcon.addEventListener('click', () => {
-        input.value = valueDiv.textContent; // Lấy giá trị hiện tại từ div và gán vào input
 
-        // Ẩn div và hiển thị input
-        valueDiv.style.display = 'none';
-        input.style.display = 'block';
-        input.focus(); // Đặt focus vào input
+
+
+const btn = document.getElementById('expand-modal');
+const modal = document.getElementById('modal-add-ingredient');
+
+btn.addEventListener('click', () => {
+  if (!modal.classList.contains('hidden')) {
+    // Đang hiện → thì ẩn mượt + sau đó display none
+    modal.classList.add('hidden');
+    btn.innerHTML=`<i class="fa-solid fa-angle-right"></i>`
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 300); // 300ms = thời gian transition
+  } else {
+    // Đang ẩn → thì hiển thị lại + bỏ class ẩn
+    modal.style.display = 'block';
+    btn.innerHTML=`<i class="fa-solid fa-angle-down"></i>`
+    requestAnimationFrame(() => {
+      modal.classList.remove('hidden');
     });
-
-    // Khi input mất focus hoặc người dùng nhấn Enter
-    input.addEventListener('blur', () => {
-        valueDiv.textContent = input.value; // Cập nhật giá trị cho div
-        valueDiv.style.display = 'block'; // Hiển thị lại div
-        input.style.display = 'none'; // Ẩn input
-
-        // Cập nhật vào đối tượng basicInformation với key là nội dung label
-        basicInformation[label.textContent] = input.value;
-    });
-
-    input.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-            valueDiv.textContent = input.value; // Cập nhật giá trị cho div
-            valueDiv.style.display = 'block'; // Hiển thị lại div
-            input.style.display = 'none'; // Ẩn input
-
-            // Cập nhật vào đối tượng basicInformation với key là nội dung label
-            basicInformation[label.textContent] = input.value;
-        }
-    });
-
-    // Cập nhật giá trị ban đầu khi trang tải
-    basicInformation[label.textContent] = valueDiv.textContent;
+  }
 });
-
 

@@ -118,7 +118,7 @@
                         </div>
                         <div class="form">
                             <div>Final weight</div>
-                            <div class="editable-field">Recipe</div>
+                            <div class="editable-field" id="final-weight">0 g</div>
                             <input
                                 type="text"
                                 class="editable-field-input"
@@ -156,49 +156,13 @@
                         Search and add ingredients to the recipe
                     </div>
                 </div>
-                <div id="list-ingredient">
-                    <div class="an-ingredient">
-                        <div class="an-ingredient-left">
-                            <div class="ingredient-content">
-                                1 serving of babyfood, water, bottled, GERBER,
-                                without added fluoride (113 g)
-                            </div>
-                            <div class="area-add-ingredient-equivalent">
-                                <div class="add-ingredient-equivalent">
-                                    <i class="fa-solid fa-plus"></i>
-                                </div>
-                                <div class="ingredient-content-2">
-                                    Add new food equivalent
-                                </div>
-                            </div>
-                        </div>
-                        <div class="delete-ingredient">
-                            <i class="fa-solid fa-trash"></i>
-                        </div>
-                    </div>
-                    <div class="an-ingredient">
-                        <div class="an-ingredient-left">
-                            <div class="ingredient-content">
-                                1 serving of babyfood , tropical fruit medley
-                                (88 g)
-                            </div>
-                            <div class="area-add-ingredient-equivalent">
-                                <div class="add-ingredient-equivalent">
-                                    <i class="fa-solid fa-plus"></i>
-                                </div>
-                                <div class="ingredient-content-2">
-                                    Add new food equivalent
-                                </div>
-                            </div>
-                        </div>
-                        <div class="delete-ingredient">
-                            <i class="fa-solid fa-trash"></i>
-                        </div>
-                    </div>
-                </div>
+                <div id="list-ingredient"></div>
                 <div id="add-new-gredient">
                     <div class="area-add-ingredient-equivalent">
-                        <div class="add-ingredient-equivalent">
+                        <div
+                            class="add-ingredient-equivalent"
+                            id="expand-modal"
+                        >
                             <i class="fa-solid fa-angle-down"></i>
                         </div>
                         <div class="ingredient-content-2">
@@ -214,22 +178,30 @@
                             />
                             <div id="sort">
                                 <div id="icon-sort">
-                                    <i class="fa-solid fa-arrow-up-wide-short"></i>
+                                    <i
+                                        class="fa-solid fa-arrow-up-wide-short"
+                                    ></i>
                                 </div>
                                 <select id="select-sort">
                                     <option value="overall" selected>
                                         Sort by overall
                                     </option>
-                                    <option value="energy">Sort by energy</option>
+                                    <option value="energy">
+                                        Sort by energy
+                                    </option>
                                     <option value="fat">Sort by fat</option>
                                     <option value="carbohydrate">
                                         Sort by carbohydrate
                                     </option>
-                                    <option value="protein">Sort by protein</option>
+                                    <option value="protein">
+                                        Sort by protein
+                                    </option>
                                 </select>
                             </div>
                             <select name="" id="filter-category">
-                                <option value="all" selected>All categories</option>
+                                <option value="all" selected>
+                                    All categories
+                                </option>
                                 <option value="category-1">Category 1</option>
                                 <option value="category-2">Category 2</option>
                                 <option value="category-3">Category 3</option>
@@ -244,20 +216,14 @@
                             <div class="box-2">Protein</div>
                             <div class="box-empty"></div>
                         </div>
-                        <div class="box-1a">
-                            <div class="line-1">Keto 90 Second Bread</div>
-                            <div class="line-2">Community Recipes</div>
-                            <div class="line-3">
-                                <input type="text" value="1" class="line-3a" />
-                                <div class="line-3b">portion (87 grams)</div>
-                                <div class="line-3c">87g</div>
-                            </div>
-                        </div>
-                        
+                        <div id="list-card-ingredient"></div>
+                        <div id="pagination"></div>
                     </div>
                 </div>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="./modal-add-recipe.js"></script>
+        <script src="./modal-add-recipe-2.js"></script>
     </body>
 </html>

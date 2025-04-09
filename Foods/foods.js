@@ -461,9 +461,7 @@ class ManagerIngredient {
 
         inputIds.forEach((id, index) => {
             let inputElement = document.getElementById(id);
-
             let value = inputElement.value.trim();
-
             if (index < 3) {
                 // ✅ 3 giá trị đầu phải là chuỗi, không được để trống
                 if (value === '') {
@@ -594,7 +592,6 @@ class ManagerIngredient {
         save(this.ingredients);
         this.filterSortAndPaginate();
         // Hiển thị lại thông báo
-        alert('Đã xóa nguyên liệu thành công!');
     }
 
     render(array) {
@@ -728,16 +725,35 @@ class ManagerIngredient {
         });
 
         deleteBtn.addEventListener('click', () => {
-            if (
-                window.confirm(
-                    'Bạn chắc chắn muốn xóa nguyên liệu này ? Dữ liệu sẽ mất vĩnh viễn !'
-                )
-            ) {
-                this.deleteIngredient(index);
-                this.render(this.ingredients);
-                overlay2.style.display = 'none';
-                boxAddFood.style.display = 'flex';
-            }
+            Swal.fire({
+                title: 'Bạn có chắc chắn muốn xóa không?',
+                text: 'Dữ liệu sẽ mất vĩnh viễn và không thể khôi phục!',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Delete',
+                cancelButtonText: 'Cancel',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Gọi hành động xóa
+                    this.deleteIngredient(index);
+                    this.filterSortAndPaginate();
+
+                    // Ẩn overlay, hiển thị lại khung thêm món
+                    overlay2.style.display = 'none';
+                    boxAddFood.style.display = 'flex';
+
+                    // Hiển thị thông báo thành công
+                    Swal.fire({
+                        title: 'Đã xóa!',
+                        text: 'Nguyên liệu đã được xóa thành công.',
+                        icon: 'success',
+                        timer: 1500,
+                        showConfirmButton: false,
+                    });
+                }
+            });
         });
     }
 }

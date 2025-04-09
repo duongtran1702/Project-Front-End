@@ -1,4 +1,3 @@
-
 document.querySelectorAll('.sidebar-item').forEach((item) => {
     item.addEventListener('click', function () {
         // Xóa lớp selected cho tất cả các item
@@ -9,28 +8,33 @@ document.querySelectorAll('.sidebar-item').forEach((item) => {
         // Thêm lớp selected cho item được chọn
         this.classList.add('selected');
 
-        // Lưu vị trí của item đã chọn vào localStorage
-        localStorage.setItem('selectedSidebarItem', this.id); // Giả sử bạn dùng id cho các item
-
-        // Chuyển hướng tùy theo item đã chọn
-        if (this.closest('#homepage')) {
+        // Chuyển hướng tùy theo ID
+        const id = this.id;
+        if (id === 'homepage') {
             window.location.href = '/Home/home.html';
-        } else if (this.closest('#foods')) {
+        } else if (id === 'foods') {
             window.location.href = '/Foods/foods.html';
-        } else if (this.closest('#recipes')) {
+        } else if (id === 'recipes') {
             window.location.href = '/Recipes/recipes.html';
         }
     });
 });
 
-// Khi trang được tải lại, kiểm tra xem có item nào đã được chọn trước đó không
+// Tự động thêm selected theo trang hiện tại
 window.addEventListener('DOMContentLoaded', () => {
-    const selectedItem = localStorage.getItem('selectedSidebarItem');
-    if (selectedItem) {
-        // Áp dụng lại lớp selected cho item đã được chọn
-        const itemToSelect = document.getElementById(selectedItem);
-        if (itemToSelect) {
-            itemToSelect.classList.add('selected');
+    const currentPage = window.location.pathname.split('/').pop(); // VD: "foods.html"
+
+    const map = {
+        'home.html': 'homepage',
+        'foods.html': 'foods',
+        'recipes.html': 'recipes',
+    };
+
+    const currentId = map[currentPage];
+    if (currentId) {
+        const currentItem = document.getElementById(currentId);
+        if (currentItem) {
+            currentItem.classList.add('selected');
         }
     }
 });
@@ -532,3 +536,31 @@ signOut.addEventListener('click', () => {
 //         )
 //     );
 // }
+
+/* <div class="card-ingredient">
+    <div class="box-1a">
+        <div class="line-1">Keto 90 Second Bread</div>
+        <div class="line-2">Community Recipes</div>
+        <div class="line-3">
+            <input type="text" value="1" class="line-3a" />
+            <div class="line-3b">portion (87 grams)</div>
+            <div class="line-3c">87g</div>
+        </div>
+    </div>
+    <div class="box-2a">301 kcal</div>
+    <div class="box-2a">27 g</div>
+    <div class="box-2a">6 g</div>
+    <div class="box-2a">11 g</div>
+    <div class="box-3a">
+        <i class="fa-solid fa-plus"></i>
+    </div>
+</div>; */
+/* <div class="an-ingredient">
+    <div class="ingredient-content">
+        1 serving of babyfood, water, bottled, GERBER, without added fluoride
+        (113 g)
+    </div>
+    <div class="delete-ingredient">
+        <i class="fa-solid fa-trash"></i>
+    </div>
+</div>; */
