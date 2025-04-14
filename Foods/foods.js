@@ -252,7 +252,7 @@ class ManagerIngredient {
             }
         });
 
-        selectCategory.innerHTML = `<option value='' selected >Choose category</option>`;
+        selectCategory.innerHTML = `<option value='' selected >All category</option>`;
         this.uniqueCategories.forEach((category) => {
             let option = document.createElement('option');
             option.value = category;
@@ -459,26 +459,38 @@ class ManagerIngredient {
             .querySelectorAll('.error')
             .forEach((el) => el.classList.remove('error'));
 
-        inputIds.forEach((id, index) => {
-            let inputElement = document.getElementById(id);
-            let value = inputElement.value.trim();
-            if (index < 3) {
-                // ✅ 3 giá trị đầu phải là chuỗi, không được để trống
-                if (value === '') {
-                    inputElement.classList.add('error');
-                    isValid = false;
+            inputIds.forEach((id, index) => {
+                let inputElement = document.getElementById(id);
+                let value = inputElement.value.trim();
+            
+                // 👉 Các giá trị đầu tiên là chuỗi (bắt buộc)
+                if (index < 3) {
+                    if (value === '') {
+                        inputElement.classList.add('error');
+                        isValid = false;
+                    }
+                    values.push(value);
+            
+                // 👉 5 giá trị tiếp theo phải là số (không được để trống hoặc sai kiểu)
+                } else if (index >= 3 && index < 8) {
+                    let numberValue = value === '' ? NaN : Number(value);
+                    if (isNaN(numberValue)) {
+                        inputElement.classList.add('error');
+                        isValid = false;
+                    }
+                    values.push(numberValue);
+            
+                // 👉 Các giá trị còn lại: nếu là chuỗi thì lỗi, nếu rỗng thì mặc định là 0
+                } else {
+                    if (isNaN(Number(value))) {
+                        inputElement.classList.add('error');
+                        isValid = false;
+                        values.push(0); // vẫn push giá trị để tránh mất index
+                    } else {
+                        values.push(value === '' ? 0 : Number(value));
+                    }
                 }
-                values.push(value);
-            } else {
-                // ✅ Các giá trị còn lại phải là số, nếu rỗng hoặc không phải số thì báo lỗi
-                let numberValue = value === '' ? NaN : Number(value);
-                if (isNaN(numberValue)) {
-                    inputElement.classList.add('error');
-                    isValid = false;
-                }
-                values.push(numberValue);
-            }
-        });
+            });
 
         if (!isValid) {
             Swal.fire({

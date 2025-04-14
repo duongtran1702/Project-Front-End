@@ -1,25 +1,26 @@
 function save(acc) {
-    localStorage.setItem('account-current', JSON.stringify(acc));
+    localStorage.setItem('accountCurrent', JSON.stringify(acc));
 }
 
 function load() {
-    let accounts = localStorage.getItem('accounts');
+    let accounts = localStorage.getItem('Accounts');
     return accounts ? JSON.parse(accounts) : [];
 }
 
 function loadAccCurrent() {
-    let account = localStorage.getItem('account-current');
-    return account ? JSON.parse(account) : null; // 🔹 Trả về null thay vì []
+    let account = localStorage.getItem('accountCurrent');
+    return account ? JSON.parse(account) : null;
 }
 
 let btn = document.getElementById('sign-in');
 let keepLogIn = document.getElementById('remember');
 
 class Account {
-    constructor(email, password, status) {
+    constructor(email, password, username, status) {
         this.email = email;
         this.password = password;
         this.status = status;
+        this.username = username;
     }
 }
 
@@ -29,10 +30,8 @@ class ManageAccount {
         this.listError = [];
         this.accountCurrent = null;
         this.remembered = false;
-
         this.remember();
         this.autoFill();
-
         btn.addEventListener('click', () => this.handleLogin());
     }
     remember() {
@@ -82,13 +81,19 @@ class ManageAccount {
         let password = document.getElementById('password').value.trim();
 
         if (this.check(email, password)) {
-            this.accountCurrent = new Account(email, password, this.remembered);
+            const found = this.accounts.find((temp) => temp.email === email);
+            this.accountCurrent = new Account(
+                email,
+                password,
+                found.username,
+                this.remembered
+            );
             save(this.accountCurrent);
+            setTimeout(() => {
+                window.location.href = '/Home/home.html';
+            }, 500);
         }
         this.render();
-        setTimeout(() => {
-            window.location.href = '/Home/home.html';
-        },500);
     }
 
     render() {

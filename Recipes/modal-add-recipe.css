@@ -1,5 +1,5 @@
 #box-image #box-image-top div:nth-child(1) img {
-    height: 14px;
+    height: 18px;
 }
 #box-image #box-image-top div:nth-child(1) {
     font-size: 15px;
@@ -17,7 +17,7 @@ body {
 }
 #box-image {
     background-color: white;
-    width: 180px;
+    width: 240px;
     padding: 10px 15px;
     border-radius: 4px;
     box-shadow: 1px 2px 2px #a4a4a4;
@@ -30,7 +30,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 40px;
+    width: 50px;
     border: 1.6px solid #ebebeb;
     padding: 3px 5px;
     border-radius: 3px;
@@ -41,8 +41,8 @@ body {
     align-items: center;
 }
 #image-recipe {
-    width: 180px;
-    height: 160px;
+    width: 240px;
+    height: 240px;
     object-fit: cover;
     border-radius: 5px;
     display: none;
@@ -50,8 +50,8 @@ body {
 #container-image {
     position: relative;
     display: flex;
-    width: 180px;
-    height: 160px;
+    width: 240px;
+    height: 240px;
     justify-content: center;
     align-items: center;
 }
@@ -66,8 +66,12 @@ body {
     display: none;
 }
 #box-image-bot img {
-    height: 24px;
+    height: 30px;
 }
+span {
+    font-size: 20px;
+}
+
 #box-image-bot {
     color: #7b7a7a;
     display: flex;
@@ -85,8 +89,10 @@ body {
     border-radius: 5px;
     cursor: pointer;
     height: fit-content;
+    font-size: 18px;
 }
 #input-link-image {
+    width: 200px;
     border: none;
     box-shadow: 0 0 3px #aaa;
     padding: 3px 8px;
@@ -101,18 +107,19 @@ body {
 #box-category {
     display: none;
     position: absolute;
-    top: 40px;
+    top: 50px;
     left: -15px;
     background-color: white;
     padding: 5px 0px;
     margin: 0px;
     list-style: none;
-    width: 210px;
+    width: 270px;
     border-radius: 5px;
     flex-direction: column;
 }
 #box-category li {
     padding: 2px 25px;
+    font-size: 20px;
     border-radius: 5px;
     color: #aaa;
 }
@@ -122,7 +129,7 @@ body {
 }
 .fa-heart {
     color: rgb(191, 184, 184);
-    font-size: 13px;
+    font-size: 16px;
 }
 .fa-heart:hover {
     color: red;
@@ -130,13 +137,13 @@ body {
 }
 #container-top {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    gap: 20px;
 }
 #publish {
     background-color: rgba(26, 179, 148, 1);
     color: white;
     padding: 3px 8px;
+    font-size: 18px;
     border: none;
     border-radius: 3px;
     height: fit-content;
@@ -145,81 +152,110 @@ body {
 #box-publish {
     display: flex;
     justify-content: space-between;
-    width: 500px;
-    /* note */
     align-items: center;
     background-color: white;
-    padding: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 .box-intro-top {
-    font-size: 20px;
+    font-size: 24px;
     color: rgb(107, 108, 109);
 }
 .box-intro-bot {
-    font-size: 12px;
+    font-size: 16px;
     color: rgba(136, 136, 136, 1);
 }
 
 .form div:nth-child(1) {
-    width: 100px;
-    border-right: 2px solid #ccc;
-    height: 30px;
+    background-color: #f3f3f3;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 8px;
+    font-size: 18px;
+    color: rgb(28, 28, 28);
+}
+.editable-field {
+    min-height: 40px;
+    font-size: 17px;
+    width: 660px;
     display: flex;
     align-items: center;
     padding-left: 8px;
-}
-.editable-field {
-    width: 370px;
-    padding-left: 8px;
+    color: #625f5f;
+    background-color: white;
+    border-left: 1.5px solid #c0c0c0;
+    border-right: 1.5px solid #c0c0c0;
     box-sizing: border-box;
 }
+
 .icon-edit {
-    width: 30px;
-    border-left: 2px solid #ccc;
-    height: 30px;
+    width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
 }
 .form {
-    border: 2px solid #ccc;
+    border: 1.5px solid #c0c0c0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: fit-content;
     margin-bottom: 10px;
+    border-radius: 3px;
+    box-sizing: border-box;
 }
+
 .icon-edit img {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
 }
 .editable-field-input {
+    min-height: 40px;
+    font-size: 17px;
     display: none;
-    width: 360px;
-    outline: none;
+    width: 660px;
+    min-width: 0;
     border: none;
+    border-left: 1.5px solid #ccc;
+    border-right: 1.5px solid #ccc;
+    outline: none;
     background-color: transparent;
     padding-left: 8px;
+    box-sizing: border-box;
+    resize: none;
 }
+
 #basic-infor {
     background-color: white;
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
     margin-top: 20px;
+    box-sizing: border-box;
+}
+
+.container-mid {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 20px;
 }
 #introduction {
     background-color: rgba(26, 179, 148, 1);
     padding: 7px 15px;
     border-radius: 5px;
     margin-top: 20px;
+    box-sizing: border-box;
 }
+
 #introduction div:nth-child(1) {
-    font-size: 20px;
+    font-size: 24px;
     color: white;
 }
 #introduction div:nth-child(2) {
-    font-size: 12px;
+    font-size: 16px;
     color: white;
 }
 
@@ -240,6 +276,8 @@ body {
     display: flex;
     padding-left: 10px;
     align-items: center;
+    font-size: 17px;
+    box-sizing: border-box;
 }
 .delete-ingredient {
     width: 40px;
@@ -250,7 +288,6 @@ body {
     border-left: none;
 }
 #container-ingredients {
-    margin-top: 10px;
     background-color: white;
     padding: 10px;
     border-radius: 5px;
@@ -267,6 +304,7 @@ body {
 .area-add-ingredient-equivalent {
     display: flex;
     border: 1.6px solid #e6e6e6;
+    width: 780px;
 }
 .add-ingredient-equivalent {
     width: 40px;
@@ -295,7 +333,7 @@ body {
     border: 1.6px solid #e6e6e6;
     border-left: none;
 }
-#expand-modal{
+#expand-modal {
     cursor: pointer;
 }
 
@@ -384,8 +422,8 @@ select option {
 }
 
 .box-ingredient {
-    border-top-left-radius:3px ;
-    border-top-right-radius:3px ;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
     margin-top: 10px;
     display: flex;
     width: fit-content;
@@ -421,7 +459,7 @@ select option {
     border-bottom-left-radius: 3px;
     border-top-left-radius: 3px;
 }
-.line-3a:focus{
+.line-3a:focus {
     outline: 1.6px solid rgb(20, 172, 9);
     border: none;
     border-radius: 3px;
@@ -490,7 +528,7 @@ select option {
     flex-direction: column;
     display: flex;
 }
-#pagination {
+#pagination-1 {
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -545,4 +583,208 @@ button:disabled:hover {
 .next-btn {
     font-size: 12px;
     color: #e22eb8;
+}
+.icon-write {
+    min-width: 30px;
+    max-width: 30px;
+    border-left: 1px solid #ccc;
+    min-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.icon-write img {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+.a-cooking-method {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.stt {
+    min-width: 30px;
+    max-width: 30px;
+    border-right: 1px solid #ccc;
+    min-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.method {
+    width: 100%;
+    padding-left: 10px;
+    min-height: 20px;
+    padding: 5px 8px;
+    display: flex;
+    align-items: center;
+    /* display: none; */
+}
+.method-input {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    padding-left: 10px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    display: none;
+}
+em {
+    color: #868686;
+}
+div {
+    cursor: default;
+}
+#list-cooking-method .a-cooking-method:first-child {
+    display: none;
+}
+#list-cooking-method {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#container-mid-right-box-1 {
+    width: 370px;
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+#container-mid-main {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 20px;
+}
+#div-energy {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1.5px solid #aaa;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    color: #555555;
+}
+#outer-circle-fat,
+#outer-circle-carbohydrate,
+#outer-circle-protein,
+#outer-circle-fiber {
+    width: 65px;
+    height: 65px;
+    background-color: rgba(243, 243, 244, 1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inner-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+}
+.fat-color {
+    background-color: rgb(222, 53, 53) !important;
+}
+.protein-color {
+    background-color: rgb(13, 161, 131) !important;
+}
+.carbohydrate-color {
+    background-color: rgba(234, 159, 119, 1) !important;
+}
+.fiber-color {
+    background-color: rgb(97, 118, 143) !important;
+}
+#row-macronutrient {
+    display: flex;
+    gap: 25px;
+    padding: 10px;
+}
+.box-cover {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    color: #484141;
+}
+#myPieChart {
+    width: 300px;
+    height: 300px;
+}
+#container-mid-right-box-2 {
+    width: 370px;
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+}
+#container-mid-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#myPieChart {
+    width: 300px !important;
+    height: 300px !important;
+}
+#box-chart {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.a-micronutrient {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0px;
+}
+#container-mid-right-box-3 {
+    width: 370px;
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+#list-micronutrient {
+    padding: 10px 0px 5px 0px;
+    color: #888888;
+}
+.a-micronutrient div:nth-child(2) {
+    display: flex;
+    gap: 5px;
+}
+.bold-number {
+    font-weight: bold;
+}
+#container-cooking-method {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+.container-mid-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#list-micronutrient .a-micronutrient:nth-child(even) {
+    background-color: #f1f1f1;
+}
+#icon-write-1 {
+    width: 16px;
+    height: 16px;
 }

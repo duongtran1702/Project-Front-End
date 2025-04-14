@@ -33,7 +33,7 @@
     flex-direction: column;
     justify-content: center;
 }
-#container div{
+#container div {
     display: flex;
     font-size: 16px;
 }
@@ -41,7 +41,7 @@
     font-size: 16px;
 }
 input {
-    padding: 10px;
+    padding: 13px 20px 13px 10px;
     border: 2px solid rgb(189, 185, 185);
     outline: none;
 }
@@ -157,4 +157,7 @@ aside {
     font-size: 10px;
     background-color: rgb(51, 245, 180);
     margin-right: 5px;
+}
+body {
+    background-color: #f2f2f2;
 }

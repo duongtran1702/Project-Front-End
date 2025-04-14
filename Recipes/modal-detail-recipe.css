@@ -1,0 +1,370 @@
+#box-image-1 #box-image-top-1 div:nth-child(1) img {
+    height: 18px;
+}
+#box-image-1 #box-image-top-1 div:nth-child(1) {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(204, 161, 43);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 1px 1px 3px #c3c3c3;
+    padding: 5px;
+    border-radius: 3px;
+}
+#box-image-1 {
+    background-color: white;
+    width: 240px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    box-shadow: 1px 2px 2px #a4a4a4;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: fit-content;
+}
+#box-like-1 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 50px;
+    border: 1.6px solid #ebebeb;
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+#box-image-1 #box-image-top-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#image-recipe-1 {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+#container-image-1 {
+    position: relative;
+    display: flex;
+    width: 240px;
+    height: 240px;
+    justify-content: center;
+    align-items: center;
+}
+
+#box-image-bot-1 img {
+    margin-top: 3px;
+    height: 30px;
+}
+span {
+    font-size: 20px;
+}
+
+#box-image-bot-1 {
+    color: #7b7a7a;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    position: relative;
+    width: fit-content;
+}
+
+.fa-heart {
+    color: rgb(191, 184, 184);
+    font-size: 16px;
+    color: red;
+}
+
+#container-top-1 {
+    display: flex;
+    gap: 20px;
+}
+
+.box-intro-top {
+    font-size: 24px;
+    color: rgb(107, 108, 109);
+}
+.box-intro-bot {
+    font-size: 16px;
+    color: rgba(136, 136, 136, 1);
+}
+
+.form-1 div:nth-child(1) {
+    background-color: #f3f3f3;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 8px;
+    font-size: 18px;
+    color: rgb(28, 28, 28);
+}
+.editable-field-1 {
+    min-height: 40px;
+    font-size: 17px;
+    width: 700px;
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    color: #625f5f;
+    background-color: white;
+    border-left: 1.5px solid #c0c0c0;
+    box-sizing: border-box;
+}
+#total-time {
+    display: flex;
+    align-items: center;
+}
+.form-1 {
+    border: 1.5px solid #c0c0c0;
+    display: flex;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+#basic-infor-1 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.container-mid {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 20px;
+}
+#introduction-1 {
+    background-color: rgba(26, 179, 148, 1);
+    padding: 7px 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 1232px;
+    box-sizing: border-box;
+}
+#modal-recipe-1 {
+    padding: 20px;
+    width: 1232px;
+    padding-top: 30px;
+    padding-bottom: 0px;
+}
+#introduction-1 div:nth-child(1) {
+    font-size: 24px;
+    color: white;
+}
+#introduction-1 div:nth-child(2) {
+    font-size: 16px;
+    color: white;
+}
+
+#list-ingredient-1 {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 780px;
+}
+.an-ingredient {
+    display: flex;
+}
+.ingredient-content-1 {
+    width: 100%;
+    min-width: 600px;
+    border: 1.5px solid #d0d0d0;
+    height: 35px;
+    display: flex;
+    padding-left: 10px;
+    align-items: center;
+    font-size: 17px;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+#container-ingredients {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+body {
+    background-color: #ececec;
+}
+
+#list-card-ingredient-1 {
+    flex-direction: column;
+    display: flex;
+}
+
+.a-cooking-method-1 {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.stt-1 {
+    min-width: 30px;
+    max-width: 30px;
+    border-right: 1px solid #ccc;
+    min-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.method-1 {
+    width: 100%;
+    padding-left: 10px;
+    min-height: 20px;
+    padding: 5px 8px;
+    display: flex;
+    align-items: center;
+}
+div {
+    cursor: default;
+}
+
+#list-cooking-method-1 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#container-mid-right-box-1a {
+    width: 370px;
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+#container-mid-main-1 {
+    display: flex;
+    gap: 20px;
+}
+#div-energy-1 {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1.5px solid #aaa;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    color: #555555;
+}
+#outer-circle-fat-1,
+#outer-circle-carbohydrate-1,
+#outer-circle-protein-1,
+#outer-circle-fiber-1 {
+    width: 65px;
+    height: 65px;
+    background-color: rgba(243, 243, 244, 1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inner-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+}
+.fat-color {
+    background-color: rgb(222, 53, 53) !important;
+}
+.protein-color {
+    background-color: rgb(13, 161, 131) !important;
+}
+.carbohydrate-color {
+    background-color: rgba(234, 159, 119, 1) !important;
+}
+.fiber-color {
+    background-color: rgb(97, 118, 143) !important;
+}
+#row-macronutrient-1 {
+    display: flex;
+    gap: 25px;
+    padding: 10px;
+}
+.box-cover {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    color: #484141;
+}
+#myPieChart-1 {
+    width: 300px;
+    height: 300px;
+}
+#container-mid-right-box-2a {
+    width: 370px;
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+}
+#container-mid-right-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#myPieChart-1 {
+    width: 300px !important;
+    height: 300px !important;
+}
+#box-chart-1 {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.a-micronutrient {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0px;
+}
+#container-mid-right-box-3a {
+    width: 370px;
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+#list-micronutrient-1 {
+    padding: 10px 0px 5px 0px;
+    color: #888888;
+}
+.a-micronutrient div:nth-child(2) {
+    display: flex;
+    gap: 5px;
+}
+.bold-number {
+    font-weight: bold;
+}
+#container-cooking-method-1 {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+.container-mid-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#list-micronutrient-1 .a-micronutrient:nth-child(even) {
+    background-color: #f1f1f1;
+}

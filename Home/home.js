@@ -50,16 +50,12 @@ menu.addEventListener('click', () => {
 });
 
 let user = document.getElementById('user');
-let loadAccount = localStorage.getItem('accounts');
+let loadAccount = localStorage.getItem('Accounts');
 let accounts = JSON.parse(loadAccount);
 
-let loadAccCurrent = localStorage.getItem('account-current');
+let loadAccCurrent = localStorage.getItem('accountCurrent');
 let accountCurrent = JSON.parse(loadAccCurrent);
-
-let found = accounts.find((temp) => temp.email === accountCurrent.email);
-
-if (found) user.innerText = found.username;
-else user.innerText = 'Admin';
+user.innerText=accountCurrent.username;
 
 let signOut = document.getElementById('sign-out');
 signOut.addEventListener('click', () => {

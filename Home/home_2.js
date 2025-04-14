@@ -1,23 +1,38 @@
 let collection = document.getElementById('collection');
+let activeAccount = JSON.parse(localStorage.getItem('accountCurrent'));
 
-function saveCollection(array) {
-    localStorage.setItem('collection', JSON.stringify(array));
+function loadRecipeFavorite() {
+    accounts = JSON.parse(localStorage.getItem('Accounts')) || [];
+    let found = accounts.find(
+        (temp) => temp.username === activeAccount.username
+    );
+    return found.recipeFavorite;
+}
+
+function saveRecipe(array) {
+    localStorage.setItem('Recipe', JSON.stringify(array));
+}
+
+function loadRecipes() {
+    return JSON.parse(localStorage.getItem('Recipe')) || [];
 }
 
 function loadCollection() {
-    let collection = localStorage.getItem('collection');
-    let parsedCollection = JSON.parse(collection) || [];
-
+    let listRecipe = JSON.parse(localStorage.getItem('Recipe')) || [];
+    let tempArray = loadRecipeFavorite();
+    let parsedCollection = listRecipe.filter((recipe) =>
+        tempArray.includes(recipe.nameRecipe)
+    );
     // Tái tạo các đối tượng FoodCard từ dữ liệu JSON
     return parsedCollection.map(
         (item) =>
             new FoodCard(
                 item.image,
-                item.title,
-                item.name,
-                item.numLike,
-                item.category,
-                item.by,
+                item.nameRecipe,
+                item.author,
+                item.numberLike,
+                item.categoryRecipe,
+                100,
                 item.energy,
                 item.fat,
                 item.carbohydrate,
@@ -68,7 +83,7 @@ class FoodCard {
 class Gallery {
     constructor() {
         this.collections = loadCollection();
-
+        this.recipe = loadRecipes();
         this.render(this.collections);
         if (searchFood) {
             let timeout;
@@ -160,6 +175,7 @@ class Gallery {
     }
 
     filterSortAndPaginate() {
+        this.collections = loadCollection();
         let filteredArray = this.collections;
 
         // Bước 1: Lọc dữ liệu theo các điều kiện
@@ -184,8 +200,7 @@ class Gallery {
 
         // Bước 3: Phân trang
 
-        let totalPages =
-            Math.ceil(filteredArray.length / this.itemsPerPage);
+        let totalPages = Math.ceil(filteredArray.length / this.itemsPerPage);
         this.currentPage = Math.min(this.currentPage, totalPages) || 1;
         let start = this.itemsPerPage * (this.currentPage - 1);
         let end = this.itemsPerPage * this.currentPage;
@@ -237,7 +252,7 @@ class Gallery {
             }
         });
 
-        selectCategory.innerHTML = `<option value='' selected >Choose category</option>`;
+        selectCategory.innerHTML = `<option value='' selected >All category</option>`;
         this.uniqueCategories.forEach((category) => {
             let option = document.createElement('option');
             option.value = category;
@@ -299,14 +314,13 @@ class Gallery {
 
             // sự kiện like
             i.addEventListener('click', (event) => {
-                console.log(index);
-                const updatedFood = this.collections.find(
-                    (item) => item.title === card.title
+                const updatedFood = this.recipe.find(
+                    (item) => item.nameRecipe === card.title
                 );
                 if (updatedFood) {
-                    updatedFood.numLike += 1; // Cập nhật lại số like
-                    numLike.innerText = updatedFood.numLike; // Cập nhật lại hiển thị số like
-                    saveCollection(this.collections); // Lưu lại mảng
+                    updatedFood.numberLike += 1;
+                    numLike.innerText = updatedFood.numberLike;
+                    saveRecipe(this.recipe);
                 }
                 event.stopPropagation();
             });

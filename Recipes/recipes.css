@@ -7,6 +7,7 @@
 .sidebar-item img {
     width: 18px;
     height: 18px;
+    cursor: pointer;
 }
 .sidebar-item div:nth-child(1) {
     display: flex;
@@ -19,6 +20,7 @@
 }
 .sidebar-item div:nth-child(2) {
     color: #a7b1c2;
+    cursor: pointer;
 }
 
 #brand {
@@ -67,6 +69,7 @@ footer div:nth-child(1) {
 }
 footer div:nth-child(2) {
     color: white;
+    cursor: pointer;
 }
 footer {
     background: #15a382;
@@ -78,16 +81,12 @@ footer {
 footer img {
     width: 20px;
     height: 17px;
+    cursor: pointer;
 }
 footer:hover {
     cursor: pointer;
 }
 
-* {
-    font-family: 'sans-serif';
-    margin: 0px;
-    padding: 0px;
-}
 #container-all {
     display: flex;
     /* position: relative; */
@@ -246,6 +245,12 @@ body {
     color: rgb(34, 34, 34);
     font-weight: 600;
     font-size: 18px;
+    cursor: pointer;
+    width: fit-content;
+}
+.title:hover {
+    text-decoration: underline;
+    color: rgb(255, 25, 0);
 }
 .name {
     color: rgba(103, 106, 108, 1);
@@ -328,7 +333,7 @@ li {
 
 #collection {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(560px, 600px));
+    grid-template-columns: repeat(auto-fit, minmax(560px, 595px));
     gap: 30px;
 
     /* width: 90%; */
@@ -355,7 +360,7 @@ li {
 #box-intro {
     display: flex;
     justify-content: space-between;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     padding-right: 10%;
 }
 #box-special div:nth-child(1) {
@@ -394,17 +399,7 @@ li {
     align-items: center;
 }
 
-main {
-    min-width: 585px;
-    box-sizing: border-box;
-    margin-top: 15px;
-    margin-left: 15px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: -1px -1px 5px #a9a9a9;
-}
-#search {
+#search-1 {
     padding: 5px 10px;
     width: calc(40% - 10px);
     min-width: 540px;
@@ -451,7 +446,7 @@ main {
     gap: 15px;
     margin-bottom: 20px;
 }
-#filter-category {
+#filter-category-1 {
     padding-left: 5px;
     width: calc(20% - 10px);
     display: flex;
@@ -524,4 +519,86 @@ button:disabled:hover {
 .next-btn {
     font-size: 12px;
     color: #0f48ce;
+}
+main {
+    box-sizing: border-box;
+    margin-top: 15px;
+    margin-left: 15px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: -1px -1px 5px #a9a9a9;
+    position: relative;
+    height: fit-content;
+}
+#modal-recipe {
+    padding: 10px;
+    width: 1232px;
+}
+#overlay-1 {
+    position: absolute;
+    inset: 0;
+    display: none;
+    height: 2230px;
+    border-radius: 5px;
+    z-index: 80;
+    background-color: #edecec;
+    justify-content: center;
+}
+#overlay-2 {
+    position: absolute;
+    inset: 0;
+    display: none;
+    height: 2160px;
+    border-radius: 5px;
+    z-index: 80;
+    background-color: #edecec;
+    justify-content: center;
+}
+#icon-close-detail {
+    font-size: 20px;
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    cursor: pointer;
+}
+#icon-close-detail:hover {
+    font-size: 22px;
+    color: rgb(239, 8, 8);
+}
+.box-favorite{
+    display: flex;
+    gap: 10px;
+    border-radius: 3px;
+    height: fit-content;
+    align-items: center;
+    width: fit-content;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: rgb(252, 252, 252);
+}
+.color-favorite{
+    color:#aaa;
+}
+.favorited{
+    color: rgb(229, 229, 74);
+}
+.box-top-left{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.text-favorite{
+    font-weight: 400;
+}
+body {
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+#number-favorite{
+    font-size: 15px;
 }

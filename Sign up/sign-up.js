@@ -1,31 +1,33 @@
 function save(array) {
-    localStorage.setItem('accounts', JSON.stringify(array));
+    localStorage.setItem('Accounts', JSON.stringify(array));
 }
 
 function load() {
-    let account = localStorage.getItem('accounts');
+    let account = localStorage.getItem('Accounts');
     return JSON.parse(account) || [];
 }
 
 let btn = document.getElementById('sign-up');
 
+function strongPassword(password) {
+    const isStrongPassword =
+        /^(?=.*[b-z])(?=.*[B-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/.test(
+            password
+        );
+    return isStrongPassword;
+}
 class Account {
     constructor(email, username, password) {
         this.email = email;
         this.username = username;
         this.password = password;
+        this.recipeFavorite=[]
     }
 }
 class ManageAccount {
     constructor() {
         this.accounts = load();
         this.listError = [];
-        if (this.accounts.length === 0) {
-            this.accounts.push(
-                new Account('admin@gmail.com', 'admin', 'admin12345')
-            );
-            save(this.accounts);
-        }
         this.add();
     }
     validateInput(email, username, password, confirmPassword) {
@@ -53,7 +55,12 @@ class ManageAccount {
             errors.push('Mật khẩu không được bỏ trống!');
         } else if (password.length < 8) {
             errors.push('Mật khẩu phải có ít nhất 8 kí tự!');
-        }
+        } 
+        // else if (!strongPassword(password)) {
+        //     errors.push('Mật khẩu yếu');
+        // } else if (/[a]/.test(password) || /[A]/.test(password)) {
+        //     errors.push('Mật khẩu không được chứa a hoặc A!');
+        // }
 
         if (!confirmPassword) {
             errors.push('Mật khẩu xác nhận không được trống!');
@@ -107,7 +114,7 @@ class ManageAccount {
                 this.render();
                 setTimeout(() => {
                     window.location.href = '/Sign%20in/sign-in.html';
-                },500);
+                }, 500);
             }
             this.render();
         });

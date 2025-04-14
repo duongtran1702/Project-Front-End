@@ -37,7 +37,7 @@
     font-size: 16px;
 }
 input {
-    padding: 10px;
+    padding:13px 20px 13px 10px;
     border: 2px solid rgb(189, 185, 185);
     outline: none;
 }
@@ -60,6 +60,7 @@ input:nth-child(4) {
 input:focus {
     border: 2px solid blue;
     border-radius: 3px;
+   
 }
 a {
     color: rgb(31, 31, 248);
@@ -158,4 +159,7 @@ aside {
     font-size: 10px;
     background-color: rgb(51, 245, 180);
     margin-right: 5px;
+}
+body{
+    background-color: #f2f2f2;
 }

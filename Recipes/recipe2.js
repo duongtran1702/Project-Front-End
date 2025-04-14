@@ -1,11 +1,10 @@
 let collection = document.getElementById('collection');
-
-function saveCollection(array) {
-    localStorage.setItem('collection', JSON.stringify(array));
+function loadDataRecipe() {
+    return (accounts = JSON.parse(localStorage.getItem('Accounts')) || []);
 }
 
 function loadCollection() {
-    let collection = localStorage.getItem('collection');
+    let collection = localStorage.getItem('Recipe');
     let parsedCollection = JSON.parse(collection) || [];
 
     // Tái tạo các đối tượng FoodCard từ dữ liệu JSON
@@ -13,11 +12,11 @@ function loadCollection() {
         (item) =>
             new FoodCard(
                 item.image,
-                item.title,
-                item.name,
-                item.numLike,
-                item.category,
-                item.by,
+                item.nameRecipe,
+                item.author,
+                item.numberLike,
+                item.categoryRecipe,
+                100,
                 item.energy,
                 item.fat,
                 item.carbohydrate,
@@ -28,9 +27,21 @@ function loadCollection() {
 
 let searchFood = document.getElementById('search');
 let selectCategory = document.getElementById('filter-category');
-let arrowIcon = document.getElementsByClassName('fa-arrow-up-wide-short');
+let arrowIcon = document.getElementsByClassName('icon-sort-2');
 let sortIcon = arrowIcon[0];
 let sortNutrient = document.getElementById('select-sort');
+
+function formatNumber_1(value) {
+    const num = parseFloat(value);
+    if (Number.isInteger(num)) {
+        return num;
+    }
+    const decimalPart = num.toString().split('.')[1];
+    if (decimalPart && decimalPart.length > 2) {
+        return num.toFixed(1);
+    }
+    return num;
+}
 
 class FoodCard {
     constructor(
@@ -68,8 +79,6 @@ class FoodCard {
 class Gallery {
     constructor() {
         this.collections = loadCollection();
-
-        this.render(this.collections);
         if (searchFood) {
             let timeout;
             searchFood.addEventListener('input', () => {
@@ -160,6 +169,7 @@ class Gallery {
     }
 
     filterSortAndPaginate() {
+        this.collections = loadCollection();
         let filteredArray = this.collections;
 
         // Bước 1: Lọc dữ liệu theo các điều kiện
@@ -184,13 +194,13 @@ class Gallery {
 
         // Bước 3: Phân trang
         let totalPages = Math.ceil(filteredArray.length / this.itemsPerPage);
+        this.currentPage = Math.min(this.currentPage, totalPages) || 1;
         let start = this.itemsPerPage * (this.currentPage - 1);
         let end = this.itemsPerPage * this.currentPage;
         let paginatedArray = filteredArray.slice(start, end);
 
         // Bước 4: Render lại dữ liệu
         this.render(paginatedArray);
-        console.log(paginatedArray);
 
         this.renderPagination(totalPages);
     }
@@ -235,7 +245,7 @@ class Gallery {
             }
         });
 
-        selectCategory.innerHTML = `<option value='' selected >Choose category</option>`;
+        selectCategory.innerHTML = `<option value='' selected >All category</option>`;
         this.uniqueCategories.forEach((category) => {
             let option = document.createElement('option');
             option.value = category;
@@ -275,9 +285,15 @@ class Gallery {
             let rightCard = document.createElement('div');
             rightCard.className = 'right-card';
 
-            rightCard.innerHTML = `<div class="title">
-                        ${card.title}
-                    </div>`;
+            let title = document.createElement('div');
+            title.className = 'title';
+            title.innerText = ` ${card.title}`;
+            title.addEventListener('click', () => {
+                temp.showDetail(card.title);
+                overlay_2.style.display = 'flex';
+                mainCard.style.height = '2160px';
+            });
+            rightCard.appendChild(title);
 
             let recipeInfor = document.createElement('div');
             recipeInfor.className = 'recipe-infor';
@@ -297,14 +313,13 @@ class Gallery {
 
             // sự kiện like
             i.addEventListener('click', (event) => {
-                console.log(index);
-                const updatedFood = this.collections.find(
-                    (item) => item.title === card.title
+                const updatedFood = temp.recipe.find(
+                    (item) => item.nameRecipe === card.title
                 );
                 if (updatedFood) {
-                    updatedFood.numLike += 1; // Cập nhật lại số like
-                    numLike.innerText = updatedFood.numLike; // Cập nhật lại hiển thị số like
-                    saveCollection(this.collections); // Lưu lại mảng
+                    updatedFood.numberLike += 1;
+                    numLike.innerText = updatedFood.numberLike;
+                    saveRecipe(temp.recipe);
                 }
                 event.stopPropagation();
             });
@@ -327,23 +342,23 @@ class Gallery {
             foodInfor.className = 'food-infor';
             foodInfor.innerHTML = `<ul>
                             <li>By</li>
-                            <li>${card.by} g</li>
+                            <li>${formatNumber_1(card.by)} g</li>
                         </ul>
                         <ul>
                             <li>Energy</li>
-                            <li>${card.energy} kcal</li>
+                            <li>${formatNumber_1(card.energy)} kcal</li>
                         </ul>
                         <ul>
                             <li>Fat</li>
-                            <li>${card.fat} g</li>
+                            <li>${formatNumber_1(card.fat)} g</li>
                         </ul>
                         <ul>
                             <li>Carbohydrate</li>
-                            <li>${card.carbohydrate} g</li>
+                            <li>${formatNumber_1(card.carbohydrate)} g</li>
                         </ul>
                         <ul>
                             <li>Protein</li>
-                            <li>${card.protein} g</li>
+                            <li>${formatNumber_1(card.protein)} g</li>
                         </ul>`;
 
             rightCard.appendChild(recipeInfor);
@@ -356,4 +371,4 @@ class Gallery {
         });
     }
 }
-new Gallery();
+let temp_1 = new Gallery();
