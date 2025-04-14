@@ -116,6 +116,9 @@ span {
     width: 270px;
     border-radius: 5px;
     flex-direction: column;
+    height: 180px;
+    overflow-y: scroll;
+    z-index: 100;
 }
 #box-category li {
     padding: 2px 25px;

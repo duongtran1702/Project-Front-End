@@ -238,6 +238,11 @@ button:hover {
     top: 5px;
     right: 5px;
 }
+#close:hover .fa-xmark{
+    color: rgb(255, 0, 0)!important;
+    cursor: pointer;
+    transform: scale(1.05);
+}
 #overlay {
     position: sticky;
     top: 0;

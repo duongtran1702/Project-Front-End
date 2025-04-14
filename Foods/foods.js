@@ -1,4 +1,4 @@
-let addFood = document.getElementById('icon-add');
+let addFood = document.getElementById('add-food');
 
 let overlay = document.getElementById('overlay');
 
@@ -28,14 +28,19 @@ closeBtn2.addEventListener('click', () => {
     boxAddFood.style.display = 'flex';
 });
 cancelBtn.addEventListener('click', () => {
-    if (
-        window.confirm(
-            'Bạn chắc chắn muốn hủy thêm nguyên liệu ? Dữ liệu sẽ mất và không được lưu !'
-        )
-    ) {
-        overlay.style.display = 'none';
-        boxAddFood.style.display = 'flex';
-    }
+    Swal.fire({
+        title: 'Bạn chắc chắn muốn hủy thêm nguyên liệu?',
+        text: 'Dữ liệu sẽ mất và không được lưu!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Có, hủy bỏ',
+        cancelButtonText: 'Không, quay lại',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            overlay.style.display = 'none';
+            boxAddFood.style.display = 'flex';
+        }
+    });
 });
 
 let saveAndCloseBtn = document.getElementById('save-and-close');
@@ -240,7 +245,7 @@ class ManagerIngredient {
             this.filterSortAndPaginate();
         });
         this.currentArray = [];
-        this.itemsPerPage = 2;
+        this.itemsPerPage = 8;
         this.currentPage = 1;
         this.filterSortAndPaginate();
     }
@@ -367,8 +372,9 @@ class ManagerIngredient {
     }
 
     filterSortAndPaginate() {
+        // this.ingredients = load();
+        
         let filteredArray = this.ingredients;
-        console.log('hello');
 
         // Bước 1: Lọc dữ liệu theo các điều kiện
         if (this.searchQuery && this.selectedCategory) {
@@ -459,46 +465,45 @@ class ManagerIngredient {
             .querySelectorAll('.error')
             .forEach((el) => el.classList.remove('error'));
 
-            inputIds.forEach((id, index) => {
-                let inputElement = document.getElementById(id);
-                let value = inputElement.value.trim();
-            
-                // 👉 Các giá trị đầu tiên là chuỗi (bắt buộc)
-                if (index < 3) {
-                    if (value === '') {
-                        inputElement.classList.add('error');
-                        isValid = false;
-                    }
-                    values.push(value);
-            
-                // 👉 5 giá trị tiếp theo phải là số (không được để trống hoặc sai kiểu)
-                } else if (index >= 3 && index < 8) {
-                    let numberValue = value === '' ? NaN : Number(value);
-                    if (isNaN(numberValue)) {
-                        inputElement.classList.add('error');
-                        isValid = false;
-                    }
-                    values.push(numberValue);
-            
-                // 👉 Các giá trị còn lại: nếu là chuỗi thì lỗi, nếu rỗng thì mặc định là 0
-                } else {
-                    if (isNaN(Number(value))) {
-                        inputElement.classList.add('error');
-                        isValid = false;
-                        values.push(0); // vẫn push giá trị để tránh mất index
-                    } else {
-                        values.push(value === '' ? 0 : Number(value));
-                    }
+        inputIds.forEach((id, index) => {
+            let inputElement = document.getElementById(id);
+            let value = inputElement.value.trim();
+
+            // 👉 Các giá trị đầu tiên là chuỗi (bắt buộc)
+            if (index < 3) {
+                if (value === '') {
+                    inputElement.classList.add('error');
+                    isValid = false;
                 }
-            });
+                values.push(value);
+
+                // 👉 5 giá trị tiếp theo phải là số (không được để trống hoặc sai kiểu)
+            } else if (index >= 3 && index < 8) {
+                let numberValue = value === '' ? NaN : Number(value);
+                if (isNaN(numberValue)) {
+                    inputElement.classList.add('error');
+                    isValid = false;
+                }
+                values.push(numberValue);
+
+                // 👉 Các giá trị còn lại: nếu là chuỗi thì lỗi, nếu rỗng thì mặc định là 0
+            } else {
+                if (isNaN(Number(value))) {
+                    inputElement.classList.add('error');
+                    isValid = false;
+                    values.push(0); // vẫn push giá trị để tránh mất index
+                } else {
+                    values.push(value === '' ? 0 : Number(value));
+                }
+            }
+        });
 
         if (!isValid) {
             Swal.fire({
                 icon: 'warning',
-                title: 'Input is empty or invalid input !',
-                text: 'Please try again !',
+                title: 'Dữ liệu không hợp lệ hoặc trống!',
+                text: 'Vui lòng thử lại!',
             });
-            // alert('Vui lòng nhập đúng thông tin!');
             return;
         }
         if (this.editingIndex !== null) {
@@ -526,6 +531,7 @@ class ManagerIngredient {
             document.getElementById(id).value = '';
         });
         this.filterSortAndPaginate();
+        this.filterCategory();
         // Lưu lại danh sách nguyên liệu vào localStorage
         save(this.ingredients);
     }

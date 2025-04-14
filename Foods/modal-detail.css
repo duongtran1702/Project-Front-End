@@ -255,3 +255,8 @@ button:hover {
     top: 8px;
     right: 8px;
 }
+#close-2:hover .fa-xmark{
+    color: rgb(255, 0, 0)!important;
+    cursor: pointer;
+    transform: scale(1.05);
+}

@@ -45,6 +45,10 @@
     height: 53px;
     box-sizing: border-box;
 }
+#add-food:hover {
+    background-color: #e4e0e0;
+    cursor: pointer;
+}
 #icon-add{
     width: 25px;
     height: 25px;

@@ -244,7 +244,7 @@ class ManagerIngredient {
             this.filterSortAndPaginate();
         });
         this.currentArray = [];
-        this.itemsPerPage = 3;
+        this.itemsPerPage = 6;
         this.currentPage = 1;
         this.filterSortAndPaginate();
 
@@ -255,25 +255,41 @@ class ManagerIngredient {
     }
 
     addRecipe() {
-        let check = true;
         if (!linkImage) {
-            check = false;
+            Swal.fire({
+                title: 'Link ảnh trống!',
+                text: 'Vui lòng thêm link ảnh!',
+                icon: 'warning',
+                confirmButtonText: 'OK',
+            });
+            return; // Ngăn không cho hàm chạy tiếp trước khi alert xong
         }
         if (!newCategory) {
-            check = false; //category recipe
+            Swal.fire({
+                title: 'Danh mục trống!',
+                text: 'Vui lòng nhập danh mục!',
+                icon: 'warning',
+                confirmButtonText: 'OK',
+            });
+            return;
         }
-        if (
-            !this.basicInformation['Name'] ||
-            !this.basicInformation['Author']
-        ) {
-            check = false;
-        }
-        if (!check) {
-            alert('Please enter full information');
+        if (!this.basicInformation['Name']) {
+            Swal.fire({
+                title: 'Tên món ăn trống!',
+                icon: 'warning',
+                text: 'Vui lòng nhập tên món ăn!',
+                confirmButtonText: 'OK',
+            });
             return;
         }
         if (this.nutritionPortion.length < 1) {
-            alert('Please add at least one nutrient');
+            Swal.fire({
+                title: 'Chưa thêm chất dinh dưỡng!',
+                text: 'Vui lòng thêm ít nhất một chất dinh dưỡng.',
+                icon: 'warning',
+                confirmButtonText: 'OK',
+            });
+
             return;
         }
         let existingName = this.recipe.find(
@@ -281,7 +297,12 @@ class ManagerIngredient {
                 temp.nameRecipe.trim() === this.basicInformation['Name'].trim()
         );
         if (existingName) {
-            alert('Tên đã tồn tại !');
+            Swal.fire({
+                title: 'Tên đã tồn tại!',
+                text: 'Vui lòng nhập tên khác.',
+                icon: 'error',
+                confirmButtonText: 'OK',
+            });
             return;
         }
         this.recipe.push({
@@ -296,7 +317,7 @@ class ManagerIngredient {
                 .replace(/\n/g, ' ')
                 .replace(/\s+/g, ' ')
                 .trim(),
-            author: this.basicInformation['Author'],
+            author: activeAccount.username,
             totalTime: this.basicInformation['Total time'],
             preparationTime: this.basicInformation['Preparation time'],
             finalWeight: this.basicInformation['Final weight'],
@@ -339,6 +360,7 @@ class ManagerIngredient {
         inputLinkImage.style.display = 'none';
         addImage.style.display = 'block';
         inputLinkImage.value = '';
+        linkImage = '';
     }
     initCategoryBox() {
         const boxImageBot = document.getElementById('box-image-bot');
@@ -373,12 +395,24 @@ class ManagerIngredient {
         boxImageBot.querySelector('img').src = '/my-photos/add-category.png';
         boxImageBot.querySelector('span').textContent = 'New category';
         boxCategory.innerHTML = `
-      <li class="category-option">Option 1</li>
-      <li class="category-option">Option 2</li>
-      <li class="category-option">Option 3</li>
-      <li class="category-option">Option 4</li>
-      <li class="category-option">Option 5</li>
-    `;
+        <li class="category-option">Món khai vị</li>
+        <li class="category-option">Món chính</li>
+        <li class="category-option">Món tráng miệng</li>
+        <li class="category-option">Món ăn nhẹ</li>
+        <li class="category-option">Món ăn chay</li>
+        <li class="category-option">Món ăn mặn</li>
+        <li class="category-option">Món chiên</li>
+        <li class="category-option">Món xào</li>
+        <li class="category-option">Món luộc</li>
+        <li class="category-option">Món hấp</li>
+        <li class="category-option">Món nướng</li>
+        <li class="category-option">Món kho</li>
+        <li class="category-option">Món súp / canh</li>
+        <li class="category-option">Món trộn / gỏi</li>
+        <li class="category-option">Món Việt Nam</li>
+        <li class="category-option">Món Hàn Quốc</li>
+        <li class="category-option">Món Âu</li>
+            `;
         this.initCategoryBox();
     }
     resetBasicInformation() {
